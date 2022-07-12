@@ -50,7 +50,8 @@ function oddEvenList(head: ListNode | null): ListNode | null {
   if (!head || !head.next) return head
   // 初始偶数索引节点
   let evenHead = head.next
-  // 递归定义：让 以odd和even为开头的 链表，变成odd和odd相连，even和even相连，//                并返回最后一个odd
+  // 递归定义：让 以odd和even为开头的 链表，变成odd和odd相连，even和even相连
+  // 并返回最后一个odd
   const DFS = (odd: ListNode, even: ListNode) => {
     // 易错点1：要确保odd和even不为空
     if (!odd.next || !odd.next.next) {
