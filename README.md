@@ -12,4 +12,4 @@
 
 [04 code445](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E9%93%BE%E8%A1%A8/code445.md)
 
-[05 code21]()
+[05 code21](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E9%93%BE%E8%A1%A8/code21.md)
