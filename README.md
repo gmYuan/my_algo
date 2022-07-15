@@ -14,4 +14,4 @@
 
 [05 code21](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E9%93%BE%E8%A1%A8/code21.md)
 
-[06 code82]()
+[06 code82](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E9%93%BE%E8%A1%A8/code82.md)

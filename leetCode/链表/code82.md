@@ -5,7 +5,7 @@
 
 [01 方法1参考](https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii/solution/tong-yong-shan-chu-zhong-fu-jie-dian-lia-od9g/)
 
-[02 方法2参考]()
+[02 方法2参考](https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii/solution/fu-xue-ming-zhu-di-gui-die-dai-yi-pian-t-wy0h/)
 
 ## 代码实现
 
@@ -57,4 +57,20 @@ function deleteDuplicates(head: ListNode | null): ListNode | null {
 
 方法2: 递归实现，时间复杂度 O(n)  空间复杂度O(n)
 ```ts
+function deleteDuplicates(head: ListNode | null): ListNode | null {
+  if (!head || !head.next) {
+    return head
+  }
+  // 递归定义: 删除以head作为开头的有序链表中，所有 值重复的节点
+  if (head.val === head.next.val) {
+    let newHead = head.next
+    while (newHead && head.val == newHead.val) {
+      newHead = newHead.next
+    }
+    return deleteDuplicates(newHead)
+  } else {
+    head.next = deleteDuplicates(head.next)
+  }
+  return head
+};
 ```
