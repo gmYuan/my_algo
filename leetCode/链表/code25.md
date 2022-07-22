@@ -5,7 +5,7 @@
 
 [01 方法1参考](https://leetcode.cn/problems/reverse-nodes-in-k-group/solution/k-ge-yi-zu-fan-zhuan-lian-biao-by-leetcode-solutio/)
 
-[02 方法2参考]()
+[02 方法2参考](https://leetcode.cn/problems/reverse-nodes-in-k-group/solution/di-gui-java-by-reedfan-2/)
 
 
 ## 代码实现
@@ -61,5 +61,35 @@ function reverseBetween(head, tail) {
 方法2: 递归实现，时间复杂度 O(n)  空间复杂度O(n)
 
 ```ts
+function reverseKGroup(head: ListNode | null, k: number): ListNode | null {
+  // 递归定义：反转k个1组的链表，返回新的头节点
+  let successor = head
+  for (let i = 0; i < k; i++) {
+    if (!successor) return head
+    successor = successor.next
+  }
+  // 处理单次递归处理
 
+  // 反转[left, right）间节点，返回反转后的新节点
+  let newHead = reverseBetween(head, successor)
+  // 让当前的head指向下一车厢的head
+  // 因为当前head已经经过反转，变成了尾节点
+  head.next = reverseKGroup(successor, k) 
+    
+  // 单次处理结果: 返回反转后的新的头节点
+  return newHead
+};
+
+// 反转[left, right）间节点，返回反转后的新节点
+function reverseBetween(head, successor) {
+  let pre = null
+  let cur = head
+  while (cur !== successor) {
+    let temp = cur.next
+    cur.next = pre
+    pre = cur
+    cur = temp
+  }
+  return pre
+}
 ```
