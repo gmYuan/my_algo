@@ -5,7 +5,7 @@
 
 [01 方法1图示参考](https://leetcode.cn/problems/sort-list/solution/sort-list-gui-bing-pai-xu-lian-biao-by-jyd/)
 
-[02 方法1代码参考](https://leetcode.cn/problems/sort-list/solution/pai-xu-lian-biao-di-gui-die-dai-xiang-jie-by-cherr/)
+[02 方法1&2代码参考](https://leetcode.cn/problems/sort-list/solution/pai-xu-lian-biao-di-gui-die-dai-xiang-jie-by-cherr/)
 
 
 ## 代码实现
@@ -61,7 +61,7 @@ function cut(head: ListNode, step: number) {
   return temp;
 }
     
-// 合并 l1和l2 链表
+// 合并 l1和l2 2个有序链表
 function merge(l1: ListNode, l2: ListNode) {
   let dummy = new ListNode(-1)
   // 易错点: 为了返回头节点，需要要有新对象cur，用于后移指针
@@ -78,5 +78,45 @@ function merge(l1: ListNode, l2: ListNode) {
   }
   cur.next = l1 ? l1 : l2
   return dummy.next
+}
+```
+
+方法2: 自顶向下归并排序，时间复杂度 O(n * logn)  空间复杂度O(logn)
+```ts
+function sortList(head: ListNode | null): ListNode | null {
+  if (!head || !head.next) return head
+  // 递归定义: 二分链表后进行排序
+  // 递： 二分链表； 归：返回已经排序好的链表
+  let slow = head
+  let fast = head.next
+  while (fast && fast.next) {
+    slow = slow.next
+    fast = fast.next.next
+  }
+  // temp指向 二分后的右侧链表头节点
+  let temp = slow.next
+  // 切断左半部分的链表尾节点
+  slow.next = null
+  let left = sortList(head)
+  let right = sortList(temp)
+  return merge(left, right)
+};
+
+// 合并2个有序链表
+function merge(l1: ListNode, l2: ListNode) {
+    let dummy = new ListNode(0)
+    let cur = dummy
+    while (l1 && l2) {
+        if (l1.val < l2.val) {
+            cur.next = l1
+            l1 = l1.next
+        } else {
+            cur.next = l2
+            l2 = l2.next
+        }
+        cur = cur.next
+    }
+    cur.next = l1 ? l1 : l2
+    return dummy.next
 }
 ```
