@@ -4,7 +4,7 @@
 
 ## 链表
 
-完成数: 12
+完成数: 13
 
 
 删除节点
@@ -16,6 +16,7 @@
 查找中点 + 反转节点 + 合并节点
 [code143_频率115](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E9%93%BE%E8%A1%A8/code143.md)
 
+[code234_回文链表_频率61](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E9%93%BE%E8%A1%A8/code234.md)
 
 
 
