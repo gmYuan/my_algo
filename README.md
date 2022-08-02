@@ -19,6 +19,15 @@
 [code234_回文链表_频率61](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E9%93%BE%E8%A1%A8/code234.md)
 
 
+-------------
+环/快慢指针
+
+[code61_旋转链表_频率30](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E9%93%BE%E8%A1%A8/code61.md)
+
+
+
+
+
 
 
 
