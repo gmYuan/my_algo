@@ -4,7 +4,29 @@
 
 ## 链表
 
-完成数: 13
+完成数: 14
+
+
+移动节点: 
+  - 环/快慢指针
+
+[code61_旋转链表_频率30](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E9%93%BE%E8%A1%A8/code61.md)
+
+
+-------------
+
+删除节点: 
+  - 复制伪造
+
+[code237_删除链表中的节点_频率3](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E9%93%BE%E8%A1%A8/code237.md)
+
+
+
+
+
+
+
+
 
 
 删除节点
@@ -19,10 +41,7 @@
 [code234_回文链表_频率61](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E9%93%BE%E8%A1%A8/code234.md)
 
 
--------------
-环/快慢指针
 
-[code61_旋转链表_频率30](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E9%93%BE%E8%A1%A8/code61.md)
 
 
 
