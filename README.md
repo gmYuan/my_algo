@@ -1,11 +1,21 @@
 # my_algo
 算法与数据结构学习
 
+完成数: 15
+
+
+## 栈/队列
+
+匹配成对字符: 
+  - 可选的map + 栈
+
+[code20_有效的括号_频率175]()
+
+
+
+
 
 ## 链表
-
-完成数: 14
-
 
 移动节点: 
   - 环/快慢指针
@@ -14,7 +24,6 @@
 
 
 -------------
-
 删除节点: 
   - 复制伪造
 
@@ -23,34 +32,8 @@
 
 
 
-
-
-
-
-
-
-删除节点
-[code19_频率102](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E9%93%BE%E8%A1%A8/code102.md)
-
-
-
-
-查找中点 + 反转节点 + 合并节点
-[code143_频率115](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E9%93%BE%E8%A1%A8/code143.md)
-
-[code234_回文链表_频率61](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E9%93%BE%E8%A1%A8/code234.md)
-
-
-
-
-
-
-
-
-
-
-
-已完成待整理题目
+------------------
+已完成，但是待整理题目
 
 [code83](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E9%93%BE%E8%A1%A8/code83.md)
 
@@ -73,3 +56,12 @@
 [code147](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E9%93%BE%E8%A1%A8/code147.md)
 
 [code148](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E9%93%BE%E8%A1%A8/code148.md)
+
+[code19_频率102](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E9%93%BE%E8%A1%A8/code102.md)
+
+[code143_频率115](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E9%93%BE%E8%A1%A8/code143.md)
+
+[code234_回文链表_频率61](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E9%93%BE%E8%A1%A8/code234.md)
+
+
+
