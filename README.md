@@ -7,10 +7,13 @@
 ## 栈/队列
 
 匹配成对字符: 可选的map + 栈 <br />
-[code20_有效的括号_频率175]()
+[code20_有效的括号_频率175](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/code%2020.md)
 
 字符的前进回退: 栈 <br />
-[code71_简化路径_频率19]()
+[code71_简化路径_频率19](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/code%2071.md)
+
+[code150_逆波兰表达式求值_频率7](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/code%20150.md)
+
 
 
 

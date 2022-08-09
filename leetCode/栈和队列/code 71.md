@@ -10,7 +10,7 @@
 方法1: split + 栈  时间复杂度 O(n)  空间复杂度：O(n)
 
 ```ts
-ffunction simplifyPath(path: string): string {
+function simplifyPath(path: string): string {
   // paths的成员可能有: . .. 空字符串  数字字符等
   let paths = path.split('/')
   let stack = []
