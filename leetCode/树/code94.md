@@ -4,8 +4,9 @@
 
 [01 方法1参考](https://leetcode.cn/problems/binary-tree-inorder-traversal/solution/yan-se-biao-ji-fa-yi-chong-tong-yong-qie-jian-ming/)
 
-
 [02 方法2/3参考](https://leetcode.cn/problems/binary-tree-inorder-traversal/solution/dong-hua-yan-shi-94-er-cha-shu-de-zhong-xu-bian-li/)
+
+[03 方法4参考](https://leetcode.cn/problems/binary-tree-inorder-traversal/solution/er-cha-shu-de-zhong-xu-bian-li-by-leetcode-solutio/)
 
 ## 代码实现
 
@@ -100,3 +101,37 @@ function inorderTraversal(root: TreeNode | null): number[] {
 ```
 
 
+方法4: 迭代实现- Morris遍历  时间复杂度 O(n)  空间复杂度：O(1)
+```ts
+// Morris遍历的实现原理
+// 一个二叉树节点，在通过DFS时，都会被访问3次：左递开始--> 左归(右递开始) --> 右归
+// Morris遍历本质: 在每个节点的左递阶段，通过pre.right->cur，来让树结构 链表顺序化
+
+function inorderTraversal(root: TreeNode | null): number[] {
+  let res = []
+  let pre = null, cur = root
+  while (cur) {
+    if (!cur.left) {
+      res.push(cur.val)
+      cur = cur.right
+    } else {
+      // 找到前驱节点
+      pre = cur.left
+      while (pre.right && pre.right !== cur) {
+        pre = pre.right
+      }
+      // 其前驱节点不存在右子节点时，说明处于左递阶段
+      if (!pre.right) {
+        pre.right = cur
+        cur = cur.left
+      // 其前驱节点存在右子节点时，说明处于左归(右递开始)阶段
+      } else {
+        pre.right = null
+        res.push(cur.val)
+        cur = cur.right
+      }
+    }
+  }
+  return res
+};
+```
