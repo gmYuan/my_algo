@@ -78,3 +78,5 @@
 [code94_二叉树的中序遍历_频率110](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E6%A0%91/code94.md)
 
 [code144_二叉树的前序遍历_频率77](thtps://github.com/gmYuan/my_algo/blob/main/leetCode/%E6%A0%91/code144.md)
+
+[code145_二叉树的后序遍历_频率33](thtps://github.com/gmYuan/my_algo/blob/main/leetCode/%E6%A0%91/code145.md)
