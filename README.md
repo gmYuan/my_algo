@@ -1,62 +1,22 @@
 # my_algo
 算法与数据结构学习
 
-完成数: 23
-
+完成数: 56
+完成归类数: 1
 
 ## 栈/队列
 
-匹配成对字符: 可选的map + 栈 <br />
-[code20_有效的括号_频率175](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/code%2020.md)
-
-字符的前进回退: 栈 <br />
-[code71_简化路径_频率19](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/code%2071.md)
-
-[code150_逆波兰表达式求值_频率7](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/code%20150.md)
-
-
-## 链表
-
-移动节点: 
-  - 环/快慢指针
-
-[code61_旋转链表_频率30](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E9%93%BE%E8%A1%A8/code61.md)
-
-删除节点: 
-  - 复制伪造
-
-[code237_删除链表中的节点_频率3](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E9%93%BE%E8%A1%A8/code237.md)
-
-
-合并有序链表
-[code23_合并K个升序链表_频率153]()
+优先队列(最小堆) / 桶排序
+[code347_前K个高频元素_频率20]()
 
 
 
-## 树
-
-前序/中序/后序遍历:
-
-[code94_二叉树的中序遍历_频率110](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E6%A0%91/code94.md)
-
-[code144_二叉树的前序遍历_频率77](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E6%A0%91/code144.md)
-
-[code145_二叉树的后序遍历_频率33](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E6%A0%91/code145.md)
-
-
-层序遍历:
-
-[code102_二叉树的层序遍历_频率200](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E6%A0%91/code102.md)
-
-[code103_二叉树的锯齿形层序遍历_频率178](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E6%A0%91/code103.md)
-
-[code199_二叉树的右视图_频率108](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E6%A0%91/code199.md)
 
 
 
 
 ------------------
-已完成，但是待整理题目
+已完成，但是待归类题目
 
 [code83](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E9%93%BE%E8%A1%A8/code83.md)
 
@@ -85,3 +45,27 @@
 [code143_频率115](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E9%93%BE%E8%A1%A8/code143.md)
 
 [code234_回文链表_频率61](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E9%93%BE%E8%A1%A8/code234.md)
+
+[code20_有效的括号_频率175](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/code%2020.md)
+
+[code61_旋转链表_频率30](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E9%93%BE%E8%A1%A8/code61.md)
+
+[code237_删除链表中的节点_频率3](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E9%93%BE%E8%A1%A8/code237.md)
+
+[code23_合并K个升序链表_频率153]()
+
+[code102_二叉树的层序遍历_频率200](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E6%A0%91/code102.md)
+
+[code103_二叉树的锯齿形层序遍历_频率178](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E6%A0%91/code103.md)
+
+[code199_二叉树的右视图_频率108](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E6%A0%91/code199.md)
+
+[code94_二叉树的中序遍历_频率110](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E6%A0%91/code94.md)
+
+[code144_二叉树的前序遍历_频率77](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E6%A0%91/code144.md)
+
+[code145_二叉树的后序遍历_频率33](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E6%A0%91/code145.md)
+
+[code71_简化路径_频率19](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/code%2071.md)
+
+[code150_逆波兰表达式求值_频率7](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/code%20150.md)
