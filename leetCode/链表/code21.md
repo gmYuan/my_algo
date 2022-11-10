@@ -12,23 +12,12 @@
 方法1: 虚拟头节点，时间复杂度 O(m+n)  空间复杂度O(1)
 
 ```ts
-/**
- * Definition for singly-linked list.
- * class ListNode {
- *     val: number
- *     next: ListNode | null
- *     constructor(val?: number, next?: ListNode | null) {
- *         this.val = (val===undefined ? 0 : val)
- *         this.next = (next===undefined ? null : next)
- *     }
- * }
- */
 function mergeTwoLists(list1: ListNode | null, list2: ListNode | null): ListNode | null {
-  let dummyHead = new ListNode(-1)
+  let dummy = new ListNode(-1)
   let p1 = list1
   let p2 = list2
   // 用P3来移动结果链表 的当前指针，从而更新结果链表
-  let p3 = dummyHead
+  let p3 = dummy
   while (p1 && p2) {
     if (p1.val <= p2.val) {
       p3.next = p1
@@ -40,7 +29,7 @@ function mergeTwoLists(list1: ListNode | null, list2: ListNode | null): ListNode
       p3 = p3.next
   }
   p3.next = p1 ? p1: p2
-  return dummyHead.next
+  return dummy.next
 };
 ```
 
