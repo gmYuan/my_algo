@@ -1,17 +1,28 @@
 # my_algo
 算法与数据结构学习
 
-完成数: 56 <br/>
-完成归类数: 2
-
-## 链表
-
-关键词: 递归理解 <br/>
-[code21_合并两个有序链表_频率217](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E9%93%BE%E8%A1%A8/code21.md)
+完成数: 1 <br/>
+完成归类数: 1
 
 
-关键词: 分治理解 <br/>
-[code23_合并K个升序链表_频率156]()
+## todo
+
+26-34-y / 27-4-y 
+
+## 数组
+
+### 同向指针/快慢指针
+
+[code83-47-1](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E9%93%BE%E8%A1%A8/code83.md)
+
+
+
+
+
+
+
+
+
 
 
 
@@ -21,7 +32,15 @@
 ------------------
 已完成，但是待归类题目
 
-[code83](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E9%93%BE%E8%A1%A8/code83.md)
+
+关键词: 递归理解 <br/>
+[code21_合并两个有序链表_频率217](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E9%93%BE%E8%A1%A8/code21.md)
+
+
+关键词: 分治理解 <br/>
+[code23_合并K个升序链表_频率156]()
+
+
 
 [code86](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E9%93%BE%E8%A1%A8/code86.md)
 
