@@ -1,19 +1,21 @@
 # my_algo
 算法与数据结构学习
 
-完成数: 1 <br/>
-完成归类数: 1
+完成数: 2 <br/>
+完成归类数: 2
 
 
 ## todo
 
-26-34-y / 27-4-y 
+27-4-y 
 
 ## 数组
 
 ### 同向指针/快慢指针
 
-[code83-47-1](https://github.com/gmYuan/my_algo/blob/main/leetCode/%E9%93%BE%E8%A1%A8/code83.md)
+[code283-47-1]()
+
+[code26-34-1]()
 
 
 
