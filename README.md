@@ -7,17 +7,16 @@
 
 ## todo
 
-27-4-y 
 
 ## 数组
 
 ### 同向指针/快慢指针
 
-[code283-47-1]()
+[code283-47-1](https://github.com/gmYuan/my_algo/blob/main/03-code/%E6%95%B0%E7%BB%84/code283.md)
 
-[code26-34-1]()
+[code26-34-1](https://github.com/gmYuan/my_algo/blob/main/03-code/%E6%95%B0%E7%BB%84/code26.md)
 
-
+[code27-4-1]()
 
 
 
