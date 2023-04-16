@@ -1,8 +1,8 @@
 # my_algo
 算法与数据结构学习
 
-完成数: 2 <br/>
-完成归类数: 2
+完成数: 3 <br/>
+完成归类数: 3
 
 
 ## todo
@@ -16,7 +16,7 @@
 
 [code26-34-1](https://github.com/gmYuan/my_algo/blob/main/03-code/%E6%95%B0%E7%BB%84/code26.md)
 
-[code27-4-1]()
+[code27-4-1](https://github.com/gmYuan/my_algo/blob/main/03-code/%E6%95%B0%E7%BB%84/code27.md)
 
 
 
@@ -30,7 +30,7 @@
 
 
 
-------------------
+-----------------------
 已完成，但是待归类题目
 
 
