@@ -7,30 +7,33 @@
 
 ## todo
 
+215-390-y
+
 
 ## 数组
 
 ### 同向指针/快慢指针
 
-[code283-47-1](https://github.com/gmYuan/my_algo/blob/main/03-code/%E6%95%B0%E7%BB%84/code283.md)
+[code283-47-y](https://github.com/gmYuan/my_algo/blob/main/03-code/%E6%95%B0%E7%BB%84/code283.md)
 
-[code26-34-1](https://github.com/gmYuan/my_algo/blob/main/03-code/%E6%95%B0%E7%BB%84/code26.md)
+[code26-34-y](https://github.com/gmYuan/my_algo/blob/main/03-code/%E6%95%B0%E7%BB%84/code26.md)
 
-[code27-4-1](https://github.com/gmYuan/my_algo/blob/main/03-code/%E6%95%B0%E7%BB%84/code27.md)
-
-
+[code27-4-y](https://github.com/gmYuan/my_algo/blob/main/03-code/%E6%95%B0%E7%BB%84/code27.md)
 
 
+### 首尾指针
+
+[code75-30-y]()
+
+
+### 同向尾指针
+
+[code88-192-y]()
 
 
 
 
-
-
-
-
-
------------------------
+-----------------------------
 已完成，但是待归类题目
 
 

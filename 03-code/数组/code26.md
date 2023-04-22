@@ -5,7 +5,7 @@
 1 快慢指针; 循环不变量
 2 交换优化
 
-参考实现:
+参考实现: <br/>
 [双指针法-官方实现](https://leetcode.cn/problems/remove-duplicates-from-sorted-array/solution/shan-chu-pai-xu-shu-zu-zhong-de-zhong-fu-tudo/)
 
 [双指针法-优化实现](https://leetcode.cn/problems/remove-duplicates-from-sorted-array/solution/shuang-zhi-zhen-shan-chu-zhong-fu-xiang-dai-you-hu/)

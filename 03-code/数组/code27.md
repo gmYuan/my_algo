@@ -6,8 +6,7 @@
 
 方法2: 首尾指针 & 循环不变量
 
-参考实现:
-
+参考实现: <br/>
 [官方实现](https://leetcode.cn/problems/remove-element/solution/yi-chu-yuan-su-by-leetcode-solution-svxi/)
 
 
