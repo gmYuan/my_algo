@@ -23,12 +23,12 @@
 
 ### 首尾指针
 
-[code75-30-y]()
+[code75-30-y](https://github.com/gmYuan/my_algo/blob/main/03-code/%E6%95%B0%E7%BB%84/code75.md)
 
 
 ### 同向尾指针
 
-[code88-192-y]()
+[code88-192-y](https://github.com/gmYuan/my_algo/blob/main/03-code/%E6%95%B0%E7%BB%84/code%2088.md)
 
 
 
