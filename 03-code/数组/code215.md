@@ -4,7 +4,7 @@
 
 关键词: 数组；第K个最大元素
 
-方法1: 快速排序
+方法1: 随机比较点快速排序--> todo--> 
 
 方法2: 
 
@@ -16,7 +16,7 @@
 
 ## 代码实现
 
-方法1.1: 基础快排法  平均时间复杂度:O(nlogn); 空间复杂度: O(logn)
+方法1.1: 随机比较点快排  平均时间复杂度:O(nlogn); 空间复杂度: O(logn)
 
 ```ts
 function findKthLargest(nums: number[], k: number): number {
@@ -39,6 +39,10 @@ function quickSort(arr: number[], l: number, r: number) {
 }
 
 function partition(arr: number[], l: number, r: number): number {
+    // 加入随机选中比较点逻辑，以避免有序情况下的子区间右倾
+    let randomIndex = Math.floor(Math.random() * (r - l + 1)) + l
+    swap(arr, l , randomIndex)
+    // 基础版逻辑
     const val = arr[l]
     let j = l
     // 始终满足[l+1, j]<val && [j+1, i) >=val
@@ -58,3 +62,11 @@ function swap(arr: number[], i: number, j: number) {
     [arr[i], arr[j]] = [arr[j], arr[i]]
 }
 ```
+
+基础快排存在的问题：
+  - 缺点1: 在数据基本有序的情况下，会导致拆分子区间时右区间严重倾斜，导致退化成O(n^2)
+  - 缺点2: 在有大量重复相等元素的情况下，也会导致区间严重右倾，导致退化成O(n^2)
+
+缺点1的解决方法：每次选择基础比较点时，随机选择数据中的一个，而非固定最左侧的那个
+
+对于缺点2的解决方法，见下文 方法1.2实现
