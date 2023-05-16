@@ -1,19 +1,22 @@
 # my_algo
 算法与数据结构学习
 
-完成数: 3 <br/>
-完成归类数: 3
+完成数: 6 <br/>
 
 
 ## todo
 
-215-390-y
+167-15-y
+125-27-y
+344-17-n
+345-2-n
+11-37-y
+
 
 
 ## 数组
 
-### 同向指针/快慢指针
-
+### 同向头指针/快慢指针
 [code283-47-y](https://github.com/gmYuan/my_algo/blob/main/03-code/%E6%95%B0%E7%BB%84/code283.md)
 
 [code26-34-y](https://github.com/gmYuan/my_algo/blob/main/03-code/%E6%95%B0%E7%BB%84/code26.md)
@@ -21,19 +24,23 @@
 [code27-4-y](https://github.com/gmYuan/my_algo/blob/main/03-code/%E6%95%B0%E7%BB%84/code27.md)
 
 
-### 首尾指针
-
-[code75-30-y](https://github.com/gmYuan/my_algo/blob/main/03-code/%E6%95%B0%E7%BB%84/code75.md)
-
-
 ### 同向尾指针
-
 [code88-192-y](https://github.com/gmYuan/my_algo/blob/main/03-code/%E6%95%B0%E7%BB%84/code%2088.md)
 
 
+### 首尾指针/碰撞指针
+[code75-30-y](https://github.com/gmYuan/my_algo/blob/main/03-code/%E6%95%B0%E7%BB%84/code75.md)
+
+[code215-390-y](https://github.com/gmYuan/my_algo/blob/main/03-code/%E6%95%B0%E7%BB%84/code215.md)
 
 
------------------------------
+
+
+
+
+
+
+-------------------------------
 已完成，但是待归类题目
 
 
