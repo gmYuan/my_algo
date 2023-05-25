@@ -1,16 +1,9 @@
 # my_algo
 算法与数据结构学习
 
-完成数: 6 <br/>
-
+完成数: 9 <br/>
 
 ## todo
-
-167-15-y
-125-27-y
-344-17-n
-345-2-n
-11-37-y
 
 
 
@@ -33,9 +26,11 @@
 
 [code215-390-y](https://github.com/gmYuan/my_algo/blob/main/03-code/%E6%95%B0%E7%BB%84/code215.md)
 
+[code167-15-y]()
 
+[code125-27-y]()
 
-
+[code11-37-y]()
 
 
 
