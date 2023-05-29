@@ -2,8 +2,9 @@
 
 ## 实现思路
 
-1 快慢指针; 循环不变量
-2 交换优化
+题目关键词: 0和非0元素; 保持相对顺序
+
+思维关键词: 快慢指针 + 循环不变量 + 交换优化
 
 参考实现: <br/>
 [双指针法](https://leetcode.cn/problems/move-zeroes/solution/dong-hua-yan-shi-283yi-dong-ling-by-wang_ni_ma/)
