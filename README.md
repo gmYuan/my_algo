@@ -5,10 +5,8 @@
 
 ## todo
 
-
-16-27-y
 18-16-y
-349-22-n
+
 350-15-y
 
 
@@ -39,7 +37,6 @@
 
 
 ### 4 滑动窗口
-
 [code209-47-n](https://github.com/gmYuan/my_algo/blob/main/03-code/01-%E6%95%B0%E7%BB%84/code209.md)
 
 [code3-593-y](https://github.com/gmYuan/my_algo/blob/main/03-code/01-%E6%95%B0%E7%BB%84/code3.md)
@@ -50,12 +47,12 @@
 ## 2 Set/Map
 
 ### 1 map
-
-[code1-221-y]()
+[code1-221-y](https://github.com/gmYuan/my_algo/blob/main/03-code/02-set%3Amap/code1.md)
 
 ### 2 sort + 头尾指针
-[code15-287-y]()
+[code15-287-y](https://github.com/gmYuan/my_algo/blob/main/03-code/02-set%3Amap/code15.md)
 
+[code16-27-y](https://github.com/gmYuan/my_algo/blob/main/03-code/02-set%3Amap/code16.md)
 
 
 
