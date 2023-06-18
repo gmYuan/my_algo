@@ -5,6 +5,12 @@
 
 ## todo
 
+454-7-y
+
+49-9-y
+
+
+
 
 ## 1 数组
 
@@ -45,14 +51,14 @@
 ### 1 map
 [code1-221-y](https://github.com/gmYuan/my_algo/blob/main/03-code/02-set%3Amap/code1.md)
 
-[code350-15-y]()
+[code350-15-y](https://github.com/gmYuan/my_algo/blob/main/03-code/02-set%3Amap/code350.md)
 
 ### 2 sort + 头尾指针
 [code15-287-y](https://github.com/gmYuan/my_algo/blob/main/03-code/02-set%3Amap/code15.md)
 
 [code16-27-y](https://github.com/gmYuan/my_algo/blob/main/03-code/02-set%3Amap/code16.md)
 
-[code18-16-y]()
+[code18-16-y](https://github.com/gmYuan/my_algo/blob/main/03-code/02-set%3Amap/code18.md)
 
 
 
