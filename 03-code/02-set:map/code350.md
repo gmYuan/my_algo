@@ -11,7 +11,7 @@
 
 ## 代码实现
 
-1 方法1: map  时间复杂度: O(m+n);  空间负责度(m+n)
+1 方法1: map  时间复杂度: O(m+n);  空间复杂度(m+n)
 
 ```js
 function intersect(nums1: number[], nums2: number[]): number[] {
