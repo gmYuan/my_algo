@@ -1,16 +1,14 @@
 # my_algo
 算法与数据结构学习
 
-完成数: 12 <br/>
+完成数: 23 <br/>
 
 ## todo
 
-49-9-y
 
 
 
-
-## 1 数组
+## 一 数组
 
 ### 1 同向头指针/快慢指针
 [code283-47-y](https://github.com/gmYuan/my_algo/blob/main/03-code/01-%E6%95%B0%E7%BB%84/code283.md)
@@ -44,7 +42,7 @@
 [code76-83-y](https://github.com/gmYuan/my_algo/blob/main/03-code/01-%E6%95%B0%E7%BB%84/code76.md)
 
 
-## 2 Set/Map
+## 二 Set/Map
 
 ### 1 map
 [code1-221-y](https://github.com/gmYuan/my_algo/blob/main/03-code/02-set%3Amap/code1.md)
@@ -53,31 +51,23 @@
 
 [code454-7-y](https://github.com/gmYuan/my_algo/blob/main/03-code/02-set%3Amap/code454.md)
 
-### 2 sort + 头尾指针
+[code49-9-y](https://github.com/gmYuan/my_algo/blob/main/03-code/02-set%3Amap/code49.md)
+
+[code447-0-n](https://github.com/gmYuan/my_algo/blob/main/03-code/02-set%3Amap/code447.md)
+
+[code149-9-n](https://github.com/gmYuan/my_algo/blob/main/03-code/02-set%3Amap/code149.md)
+
+### 2 set
+
+[code217-4-n](https://github.com/gmYuan/my_algo/blob/main/03-code/02-set%3Amap/code217.md)
+
+[code219-1-n](https://github.com/gmYuan/my_algo/blob/main/03-code/02-set%3Amap/code219.md)
+
+
+
+### 3 sort + 头尾指针
 [code15-287-y](https://github.com/gmYuan/my_algo/blob/main/03-code/02-set%3Amap/code15.md)
 
 [code16-27-y](https://github.com/gmYuan/my_algo/blob/main/03-code/02-set%3Amap/code16.md)
 
 [code18-16-y](https://github.com/gmYuan/my_algo/blob/main/03-code/02-set%3Amap/code18.md)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

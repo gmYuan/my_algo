@@ -1,13 +1,19 @@
-# LeetCode219- 存在重复元素 II
+# LeetCode219- 存在重复元素II
 
-## 图示
+## 实现思路
 
-[01 思路参考](https://leetcode.cn/problems/contains-duplicate-ii/solution/hua-jie-suan-fa-219-cun-zai-zhong-fu-yuan-su-ii-by/)
+1 思维关键词: Set + 滑动窗口
+
+2 参考文档: <br/>
+[01 直接参考文档](https://leetcode.cn/problems/contains-duplicate-ii/solution/hua-jie-suan-fa-219-cun-zai-zhong-fu-yuan-su-ii-by/)
+
 
 ## 代码实现
 
+方法1: Set+滑动窗口  时间复杂度 O(n); 空间复杂度 O(k)
+
 ```ts
-//方法: Map   时间复杂度 O(n)；空间复杂度 O(k)
+//方法1
 function containsNearbyDuplicate(nums: number[], k: number): boolean {
   let slideMap = new Set();
   for (let i = 0; i < nums.length; i++) {
