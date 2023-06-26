@@ -5,6 +5,9 @@
 
 ## todo
 
+206-548-y
+20-202-y
+92-166-y
 
 
 
@@ -71,3 +74,10 @@
 [code16-27-y](https://github.com/gmYuan/my_algo/blob/main/03-code/02-set%3Amap/code16.md)
 
 [code18-16-y](https://github.com/gmYuan/my_algo/blob/main/03-code/02-set%3Amap/code18.md)
+
+
+## 三 链表
+
+
+
+## 四 栈
