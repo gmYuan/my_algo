@@ -1,85 +1,68 @@
 class ListNode {
-  constructor(val, next) {
-        this.val = (val=== undefined ? 0 : val)
-        this.next = (next===undefined ? null : next)
-    }
+  constructor(val, next = null) {
+    this.val = val === undefined ? 0 : val;
+    this.next = next === undefined ? null : next;
+  }
 }
 
 function listToLink(arr) {
-    let dummy = new ListNode(0)
-    let cur = dummy
-    for (let val of arr) {
-        cur.next = new ListNode(val)
-        cur = cur.next
-    }
-    return dummy.next
+  let dummy = new ListNode(-1);
+  let cur = dummy;
+  for (let val of arr) {
+    cur.next = new ListNode(val);
+    cur = cur.next;
+  }
+  return dummy.next;
 }
 
-const head = listToLink([1,2,3,4])
-
+function printedLink(head) {
+  let cur = head;
+  let res = "";
+  while (cur) {
+    res += `${cur.val}-> `;
+    cur = cur.next;
+  }
+  res += "Null";
+  console.log(res);
+  return res;
+}
 
 // 功能代码
-function reorderList(head: ListNode | null): void {
-    if (!head || !head.next) return
-    // 找到中点
-    let mid = getMid(head)
-    let h1 = head
-    let h2 = mid.next
-    // 断开链表
-    mid.next = null
-    // 反转右半部分链表
-    let newH2 = reverse(h2)
-    // 连接左右部分的链表
-    merge(h1, newH2)
 
-};
+// 递归: fn = f(n-1) + 本轮节点操作 ==> 规模缩小/子问题
 
-function getMid(head: ListNode) {
-    let slow = head
-    let fast = head
-    while (fast.next && fast.next.next) {
-        slow = slow.next
-        fast = fast.next.next
-    }
-    return slow
+function reverseBetween(
+  head: ListNode | null,
+  left: number,
+  right: number
+): ListNode | null {
+  // 递归中止条件: 规模缩小到不再保持原有函数性质的情况，一般是极限情况
+  if (left === 1) {
+    return reverseTopN(head, right);
+  }
+  // 拆解为规模更小的子问题
+  let newHead = reverseBetween(head.next, left - 1, right - 1);
+  head.next = newHead;
+  return head;
 }
 
-function reverse(head: ListNode) {
-    let pre = null
-    let cur = head
-    while (cur) {
-        let temp = cur.next
-        cur.next = pre
-        pre = cur
-        cur = temp
-    }
-    return pre
+// 反转链表的前n个节点，返回反转后的链表头节点
+let topNSuccessor = null;
+function reverseTopN(head, n) {
+  if (n == 1) {
+    topNSuccessor = head.next;
+    return head;
+  }
+  let newHead = reverseTopN(head.next, n - 1);
+  head.next.next = head;
+  head.next = topNSuccessor;
+  return newHead;
 }
 
-function merge(l1: ListNode, l2: ListNode) {
-    // let l1Temp, l2Temp
-    // while (l1 && l2) {
-    //     l1Temp = l1.next
-    //     l2Temp = l2.next
-        
-    //     l1.next = l2
-    //     l1 = l1Temp
+// 输入：head = [1,2,3,4,5], left = 2, right = 4
+// 输出：[1,4,3,2,5]
 
-    //     l2.next = l1
-    //     l2 = l2Temp
-    // }
-
-    let dummy = new ListNode()
-    let cur = dummy
-    if (l1 && l2) {
-        cur.next = l1
-        cur.next.next = l2
-        cur = cur.next.next
-        
-        l1 = l1.next
-        l2 = l2.next
-    }
-    return dummy.next
-}
-
-reorderList(head)
+const head = listToLink([1, 2, 3, 4, 5]);
+printedLink(head);
+const newLink = reverseBetween(head, 2, 4);
+printedLink(newLink);

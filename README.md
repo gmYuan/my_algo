@@ -1,13 +1,20 @@
 # my_algo
 算法与数据结构学习
 
-完成数: 23 <br/>
+完成数: 24 <br/>
 
 ## todo
 
-206-548-y
-20-202-y
 92-166-y
+
+
+328-27-y
+2-104-n
+83-53-n
+445-27-n
+86-18-n
+
+
 
 
 
@@ -67,7 +74,6 @@
 [code219-1-n](https://github.com/gmYuan/my_algo/blob/main/03-code/02-set%3Amap/code219.md)
 
 
-
 ### 3 sort + 头尾指针
 [code15-287-y](https://github.com/gmYuan/my_algo/blob/main/03-code/02-set%3Amap/code15.md)
 
@@ -78,6 +84,13 @@
 
 ## 三 链表
 
+### 1 链表反转
+[code206-548-y]()
+
 
 
 ## 四 栈
+
+### 1 map + 栈
+[code20-202-y]()
+
