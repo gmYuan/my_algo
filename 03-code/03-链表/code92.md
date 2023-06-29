@@ -45,4 +45,35 @@ function reverseBetween(head: ListNode | null, left: number, right: number): Lis
 
 ```
 
-2 方法2: 递归法 
+2 方法2: 递归法  时间复杂度: O(n);  空间复杂度(n)
+
+```ts
+let successor = null
+function reverseBetween(head: ListNode | null, left: number, right: number): ListNode | null {
+  //S3 递归终止条件：相当于是 反转了链表的前n个节点，返回最新的头节点
+  if (left === 1) {
+    return reverseTopN(head, right)
+  }
+  //S1 递归含义：反转一个链表的部分节点，返回反转后的新头节点
+  let newHead = reverseBetween(head.next, left-1, right-1)
+  //S2.1 本轮操作：反转了部分节点后，让当前节点连接已经反转好的新链表头即可
+  head.next = newHead
+  //S2.2 返回拼接了本轮head的全规模链表，就是最终结果
+  return head
+};
+
+// 反转了链表的前n个节点，返回最新的头节点
+function reverseTopN(head: ListNode, n: number) {
+  // S3 处理递归中止条件
+  if (n === 1) {
+    successor = head.next
+    return head
+  }
+  //S1 缩小为 子规模
+  let orginLast = reverseTopN(head.next, n-1)
+  //S2 本轮数据处理
+  head.next.next = head
+  head.next = successor
+  return orginLast
+}
+```

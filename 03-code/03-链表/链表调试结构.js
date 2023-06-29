@@ -29,40 +29,32 @@ function printedLink(head) {
 
 // 功能代码
 
-// 递归: fn = f(n-1) + 本轮节点操作 ==> 规模缩小/子问题
-
-function reverseBetween(
-  head: ListNode | null,
-  left: number,
-  right: number
-): ListNode | null {
-  // 递归中止条件: 规模缩小到不再保持原有函数性质的情况，一般是极限情况
-  if (left === 1) {
-    return reverseTopN(head, right);
-  }
-  // 拆解为规模更小的子问题
-  let newHead = reverseBetween(head.next, left - 1, right - 1);
-  head.next = newHead;
-  return head;
+function oddEvenList(head: ListNode | null): ListNode | null {
+	if (!head || !head.next) return head
+  // S1 子问题
+	let [oddHead, evenHead] = temp(head, head.next)
+	let oddTail = oddHead
+	while (oddTail) {
+		oddTail = oddTail.next
+	}
+	oddTail.next = evenHead
+	return head
 }
 
-// 反转链表的前n个节点，返回反转后的链表头节点
-let topNSuccessor = null;
-function reverseTopN(head, n) {
-  if (n == 1) {
-    topNSuccessor = head.next;
-    return head;
-  }
-  let newHead = reverseTopN(head.next, n - 1);
-  head.next.next = head;
-  head.next = topNSuccessor;
-  return newHead;
+// odd-->odd; even-->even; 返回分类好的 [oddHead, evevHead]
+function temp(odd, even)  {
+	if (!odd.next || !even.next) {
+		return [odd, even]
+	}
+	let [newOddHead, newEvenHead] = temp(odd.next.next, even.next.next)
+	odd.next = newOddHead
+	even.next = newEvenHead
+	return [odd, even]
 }
-
-// 输入：head = [1,2,3,4,5], left = 2, right = 4
-// 输出：[1,4,3,2,5]
+// 输入：head = [1,2,3,4,5]
+// 输出：[1,3,5,2,4]
 
 const head = listToLink([1, 2, 3, 4, 5]);
 printedLink(head);
-const newLink = reverseBetween(head, 2, 4);
+const newLink = oddEvenList(head, 2, 4);
 printedLink(newLink);
