@@ -8,7 +8,7 @@ S1 迭代法: curOdd + curEven + originEven; 循环中止条件
 S2 递归法: oddTail + sortOddAndEven(odd, even)
 
 
-2 参考文档 <br/ >
+2 参考文档
 
 [01 方法1参考](https://leetcode.cn/problems/odd-even-linked-list/solution/shou-hua-tu-jie-328qi-ou-lian-biao-odd-even-linked/)
 

@@ -5,9 +5,8 @@
 1 思维关键词: 
   S1 迭代法: dummy; 头插法(anchor/ preMove/ willMove变量含义)
 
-  S2 递归法: 
+2 参考文章
 
-2 参考文档 <br/ >
 [01 迭代法官方实现，流程图比较清晰](https://leetcode.cn/problems/reverse-linked-list-ii/solution/fan-zhuan-lian-biao-ii-by-leetcode-solut-teyq/)
 
 [02 递归解法理解-有助于深入理解递归](https://leetcode.cn/problems/reverse-linked-list-ii/solution/yi-bu-yi-bu-jiao-ni-ru-he-yong-di-gui-si-lowt/)
@@ -42,7 +41,6 @@ function reverseBetween(head: ListNode | null, left: number, right: number): Lis
   }
   return dummy.next
 };
-
 ```
 
 2 方法2: 递归法  时间复杂度: O(n);  空间复杂度(n)

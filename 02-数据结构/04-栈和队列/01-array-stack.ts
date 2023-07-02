@@ -10,8 +10,8 @@ interface IMyStack<T> {
 
 class myStack<E> implements IMyStack<E> {
   arrayStack: myArray<E>
-  constructor() {
-    this.arrayStack = new myArray();
+  constructor(capacity = 10) {
+    this.arrayStack = new myArray(capacity);
   }
 
   getSize() {

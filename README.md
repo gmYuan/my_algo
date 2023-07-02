@@ -5,11 +5,10 @@
 
 ## todo
 
-2-104-n
 83-53-n
 445-27-n
 86-18-n
-
+203-4-n
 
 
 
@@ -81,11 +80,21 @@
 ## 三 链表
 
 ### 1 链表反转
-[code206-548-y]()
+[code206-548-y](https://github.com/gmYuan/my_algo/blob/main/03-code/03-%E9%93%BE%E8%A1%A8/code206.md)
 
-[code92-166-y](): 要多做，很经典的理解 链表和递归 的题目
+[code92-166-y](https://github.com/gmYuan/my_algo/blob/main/03-code/03-%E9%93%BE%E8%A1%A8/code92.md): 要多做，很经典的理解 链表和递归 的题目
 
-[code328-27-y](): 有纪念意义的一道题，第一次依靠自己理解实现了没有参考的递归版本实现
+[code328-27-y](https://github.com/gmYuan/my_algo/blob/main/03-code/03-%E9%93%BE%E8%A1%A8/code328.md): 有纪念意义的一道题，第一次依靠自己理解实现了没有参考的递归版本实现
+
+### 2 2个链表相关操作
+
+[code2-104-n]()
+
+[code21-232-n]()
+
+### 3 链表去重
+
+[code82-109-n]()
 
 
 

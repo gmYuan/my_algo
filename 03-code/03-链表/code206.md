@@ -6,7 +6,8 @@
   S1 迭代法: 前后指针 + temp变量
   S2 递归法: fn(n) = fn(n-1) + 某项操作
 
-2 参考文档 <br/ >
+2 参考文档 
+
 [01 对递归的理解很好](https://leetcode.cn/problems/reverse-linked-list/solution/fan-zhuan-lian-biao-liang-chong-shi-xian-sk9y/)
 
 
