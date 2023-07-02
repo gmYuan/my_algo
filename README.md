@@ -1,7 +1,7 @@
 # my_algo
 算法与数据结构学习
 
-完成数: 24 <br/>
+完成数: 30 <br/>
 
 ## todo
 
@@ -88,19 +88,18 @@
 
 ### 2 2个链表相关操作
 
-[code2-104-n]()
+[code2-104-n](https://github.com/gmYuan/my_algo/blob/main/03-code/03-%E9%93%BE%E8%A1%A8/code2.md)
 
-[code21-232-n]()
+[code21-232-n](https://github.com/gmYuan/my_algo/blob/main/03-code/03-%E9%93%BE%E8%A1%A8/code21.md)
 
 ### 3 链表去重
 
-[code82-109-n]()
-
+[code82-109-n](https://github.com/gmYuan/my_algo/blob/main/03-code/03-%E9%93%BE%E8%A1%A8/code82.md)
 
 
 
 ## 四 栈
 
 ### 1 map + 栈
-[code20-202-y]()
+[code20-202-y](https://github.com/gmYuan/my_algo/blob/main/03-code/04-%E6%A0%88/code20.md)
 
