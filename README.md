@@ -1,15 +1,14 @@
 # my_algo
 算法与数据结构学习
 
-完成数: 30 <br/>
+完成数: 34 <br/>
 
 ## todo
 
-83-53-n
-445-27-n
-86-18-n
-203-4-n
-
+24-49-n
+25-311-n
+147-4-n
+237-4-n
 
 
 
@@ -92,9 +91,25 @@
 
 [code21-232-n](https://github.com/gmYuan/my_algo/blob/main/03-code/03-%E9%93%BE%E8%A1%A8/code21.md)
 
-### 3 链表去重
+[code445-27-n](https://github.com/gmYuan/my_algo/blob/main/03-code/03-%E9%93%BE%E8%A1%A8/code445.md)
+
+
+### 3 链表删除
 
 [code82-109-n](https://github.com/gmYuan/my_algo/blob/main/03-code/03-%E9%93%BE%E8%A1%A8/code82.md)
+
+[code83-53-n](https://github.com/gmYuan/my_algo/blob/main/03-code/03-%E9%93%BE%E8%A1%A8/code83.md)
+
+[code203-4-n](https://github.com/gmYuan/my_algo/blob/main/03-code/03-%E9%93%BE%E8%A1%A8/code203.md)
+
+
+### 4 链表排序
+
+[code86-18-n](https://github.com/gmYuan/my_algo/blob/main/03-code/03-%E9%93%BE%E8%A1%A8/code86.md)
+
+[code148-106-y](https://github.com/gmYuan/my_algo/blob/main/03-code/03-%E9%93%BE%E8%A1%A8/code148.md): 比较难的一个链表综合题，可以理解归并+快排
+
+
 
 
 

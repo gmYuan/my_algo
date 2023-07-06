@@ -1,31 +1,27 @@
 
 # LeetCode203- 移除链表元素
 
-## 图示参考
+1 思维关键词: 
+
+S1 迭代法: dummy + tmep.next
+
+S2 递归法: 是否连接本轮head
+
+2 参考文档
 
 [01 方法参考](https://leetcode.cn/problems/remove-linked-list-elements/solution/203yi-chu-lian-biao-yuan-su-by-lewis-dxstabdzew/)
 
+
 ## 代码实现
 
-方法1: 虚拟头节点，时间复杂度 O(n)  空间复杂度O(1)
+1 方法1: 虚拟头节点，时间复杂度 O(n)  空间复杂度O(1)
 
 ```ts
-/**
- * Definition for singly-linked list.
- * class ListNode {
- *     val: number
- *     next: ListNode | null
- *     constructor(val?: number, next?: ListNode | null) {
- *         this.val = (val===undefined ? 0 : val)
- *         this.next = (next===undefined ? null : next)
- *     }
- * }
- */
 function removeElements(head: ListNode | null, val: number): ListNode | null {
   if (!head) return head
-  let dummyHead = new ListNode()
-  dummyHead.next = head
-  let cur = dummyHead
+  let dummy = new ListNode()
+  dummy.next = head
+  let cur = dummy
   while (cur.next) {
     if (cur.next.val === val) {
       // 找到下一个值不等于val的节点
@@ -36,12 +32,11 @@ function removeElements(head: ListNode | null, val: number): ListNode | null {
     }
   }
   cur.next = null
-  return dummyHead.next
+  return dummy.next
 };
 ```
 
-
-方法2: 递归实现，时间复杂度 O(n)  空间复杂度O(n)
+2 方法2: 递归法  时间复杂度 O(n)  空间复杂度O(n)
 
 ```ts
 function removeElements(head: ListNode | null, val: number): ListNode | null {

@@ -4,7 +4,9 @@
 ## 实现思路
 
 1 思维关键词: 
+
   S1 迭代法: dummy + pre + cur && cur.next
+
   S2 递归法: 先序递归 + head && head.next + while-move节点
 
 2 参考文章
