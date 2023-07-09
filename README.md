@@ -1,12 +1,16 @@
 # my_algo
 算法与数据结构学习
 
-完成数: 34 <br/>
+完成数: 35 <br/>
 
 ## todo
 
-24-49-n
+
 25-311-n
+143-135-n
+19-120-n
+234-63-n
+61-38-n
 147-4-n
 237-4-n
 
@@ -85,6 +89,12 @@
 
 [code328-27-y](https://github.com/gmYuan/my_algo/blob/main/03-code/03-%E9%93%BE%E8%A1%A8/code328.md): 有纪念意义的一道题，第一次依靠自己理解实现了没有参考的递归版本实现
 
+[code24-49-n](https://github.com/gmYuan/my_algo/blob/main/03-code/03-%E9%93%BE%E8%A1%A8/code24.md): 递归的单轮操作 可以处理多个节点
+
+
+
+
+
 ### 2 2个链表相关操作
 
 [code2-104-n](https://github.com/gmYuan/my_algo/blob/main/03-code/03-%E9%93%BE%E8%A1%A8/code2.md)
@@ -107,7 +117,7 @@
 
 [code86-18-n](https://github.com/gmYuan/my_algo/blob/main/03-code/03-%E9%93%BE%E8%A1%A8/code86.md)
 
-[code148-106-y](https://github.com/gmYuan/my_algo/blob/main/03-code/03-%E9%93%BE%E8%A1%A8/code148.md): 比较难的一个链表综合题，可以理解归并+快排
+[code148-106-y](https://github.com/gmYuan/my_algo/blob/main/03-code/03-%E9%93%BE%E8%A1%A8/code148.md): 比较难的一个链表综合题，可以理解归并+快排；其中快排部分待实现
 
 
 

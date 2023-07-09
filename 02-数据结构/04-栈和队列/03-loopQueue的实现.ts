@@ -11,7 +11,7 @@ interface IMyQueue<T> {
   isEmpty(): boolean;
   enqueue(e: T): void;
   dequeue(): T;
-  getFront?(): T;
+  getFront(): T;
 }
 
 class myLoopQueue<E> implements IMyQueue<E>  {
@@ -41,19 +41,15 @@ class myLoopQueue<E> implements IMyQueue<E>  {
     return this.front === this.tail
   }
 
-
-
-  // Sx 判断是否已满 ==> 浪费1空间法
+  // S3 判断是否已满 ==> 浪费1空间法
   isFull() {
     const { front, tail, data } = this
     return (tail + 1) % data.length === front
   }
 
- 
-
-  //Sx 入栈: 已满时扩容 + 存入数据 + 更新双指针+size
-  enqueue(item) {
-    let {isFull, resize, getCapacity} = this
+  //S4 入栈: 已满时扩容 + 存入数据 + 更新双指针+size
+  enqueue<T>(item: T) {
+    let { isFull, resize, getCapacity } = this
     if (isFull) {
       // resize会做浪费1空间处理，所以此处如果传入data.length,就会浪费了2个空间，导致已满判断不正确
       resize(getCapacity() * 2)
@@ -64,25 +60,35 @@ class myLoopQueue<E> implements IMyQueue<E>  {
     this.size++
   }
 
-  // Sx 出栈
-  dequeue() {
-    if (this.isEmpty())  return;
-    
+  // S5 出栈
+  dequeue<T>(): T {
+    if (this.isEmpty()) return;
+    // 获取当前头元素
     const res = this.data[this.front]
+    // 头元素置空 + front循环后移 + 更新size值
     this.data[this.front] = null
     this.front = (this.front + 1) % this.data.length
     this.size--
-
+    // 成员只有容量的1/4时，进行缩容
     if (this.size === this.getCapacity() /4  && this.getCapacity()/2 > 0) {
       this.resize(this.getCapacity() / 2)
     }
     return res
   }
 
+  getFront<T>(): T {
+    if (this.isEmpty()) return;
+    return this.data[this.front]
+  }
 
-  // Sx 扩容: 遍历偏移拷贝 + 更新指针
+  // 扩容/缩容: 遍历偏移拷贝 + 更新指针
   resize(newCap) {
     let newData = new Array(newCap + 1)
+    // 或者可以使用
+    // for (let i = this.front; i !== this.tail; i = (i + 1) % this.data.length) {
+    //  newData[i] = this.data[i]
+    // }
+
     for (let i = 0; i< this.size; i++) {
       newData[i] = this.data[(i + this.front) % this.data.length]
     }
