@@ -7,13 +7,15 @@ S1 迭代法: dummy + len + (step >> 1) + (a1,b1) + (pre & cur) + cut + merge
 
 S2 递归法: getMid(slow + fast) +  递阶段拆分 + 归阶段排序(merge)
 
-S3 快排法： todo
+S3 快排法：中序递归法
 
 2 参考文档
 
 [01 方法1图示参考](https://leetcode.cn/problems/sort-list/solution/sort-list-gui-bing-pai-xu-lian-biao-by-jyd/)
 
 [02 方法1&2代码参考](https://leetcode.cn/problems/sort-list/solution/pai-xu-lian-biao-di-gui-die-dai-xiang-jie-by-cherr/)
+
+[03 快排实现参考](https://leetcode.cn/problems/sort-list/solution/tie-yi-ge-kuai-su-pai-xu-de-dai-ma-mian-36ay1/)
 
 
 ## 代码实现
@@ -135,5 +137,40 @@ function merge(l1: ListNode, l2: ListNode) {
   }
   cur.next = l1 ? l1 : l2
   return dummy.next
+}
+```
+
+3 方法3 快排实现  均摊时间复杂度 O(n * logn)  空间复杂度O(logn)
+
+```ts
+function sortList(head: ListNode | null): ListNode | null {
+  if (!head  || !head.next) return head;
+  // 每轮递归，都需要定义pivot + small + large部分
+  let pivot = head.val;
+  let small = new ListNode(), large = new ListNode();
+  let hSmall = small, hLarge = large, cur = head.next;
+  // S1 拼接small和large部分的链表
+  while (cur) {
+    let val = cur.val;
+    if (val < pivot) {
+      small.next = cur;
+      small = small.next;
+    } else {
+      large.next = cur;
+      large = large.next;
+    }
+    cur = cur.next;
+  }
+  // S2 切换large尾节点 + 切断head尾节点 + 设置small下一个节点为当前head
+  large.next = null;
+  head.next = null;
+  small.next = head;
+  // S3 递归排序small和large部分
+  small = sortList(hSmall.next);
+  large = sortList(hLarge.next);
+  // S4 让head.next指向排好序的large部分
+  head.next = large;
+  // S5 返回排好序的small部分
+  return small;
 }
 ```

@@ -1,18 +1,20 @@
 # my_algo
 算法与数据结构学习
 
-完成数: 35 <br/>
+完成数: 38 <br/>
 
 ## todo
 
 
-25-311-n
 143-135-n
 19-120-n
-234-63-n
 61-38-n
 147-4-n
 237-4-n
+
+------------
+150-10-y
+71-21-n
 
 
 
@@ -91,7 +93,9 @@
 
 [code24-49-n](https://github.com/gmYuan/my_algo/blob/main/03-code/03-%E9%93%BE%E8%A1%A8/code24.md): 递归的单轮操作 可以处理多个节点
 
+[code25-311-n](https://github.com/gmYuan/my_algo/blob/main/03-code/03-%E9%93%BE%E8%A1%A8/code25.md): 中序递归的使用示例
 
+[code234-63-n](https://github.com/gmYuan/my_algo/blob/main/03-code/03-%E9%93%BE%E8%A1%A8/code234.md): 快慢指针 + 反转左侧节点
 
 
 
@@ -117,7 +121,7 @@
 
 [code86-18-n](https://github.com/gmYuan/my_algo/blob/main/03-code/03-%E9%93%BE%E8%A1%A8/code86.md)
 
-[code148-106-y](https://github.com/gmYuan/my_algo/blob/main/03-code/03-%E9%93%BE%E8%A1%A8/code148.md): 比较难的一个链表综合题，可以理解归并+快排；其中快排部分待实现
+[code148-106-y](https://github.com/gmYuan/my_algo/blob/main/03-code/03-%E9%93%BE%E8%A1%A8/code148.md): 比较难的一个链表综合题，可以理解归并+快排
 
 
 
