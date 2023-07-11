@@ -1,12 +1,10 @@
 # my_algo
 算法与数据结构学习
 
-完成数: 38 <br/>
+完成数: 39 <br/>
 
 ## todo
 
-
-143-135-n
 19-120-n
 61-38-n
 147-4-n
@@ -15,6 +13,11 @@
 ------------
 150-10-y
 71-21-n
+
+232-119-y
+225-29-y
+155-81-y
+
 
 
 
@@ -96,6 +99,11 @@
 [code25-311-n](https://github.com/gmYuan/my_algo/blob/main/03-code/03-%E9%93%BE%E8%A1%A8/code25.md): 中序递归的使用示例
 
 [code234-63-n](https://github.com/gmYuan/my_algo/blob/main/03-code/03-%E9%93%BE%E8%A1%A8/code234.md): 快慢指针 + 反转左侧节点
+
+[code143-135-n](https://github.com/gmYuan/my_algo/blob/main/03-code/03-%E9%93%BE%E8%A1%A8/code143.md): 很综合性的一道题，注意3种递归方法的实现都很有特点，需要多做几次
+
+
+
 
 
 

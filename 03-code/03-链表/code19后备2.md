@@ -1,7 +1,13 @@
 
 # LeetCode19- 两数相加 II
 
-## 图示参考
+## 实现思路
+
+1 实现思路:
+
+  - 递归法: 后序递归法
+
+2 参考文档
 
 [01 方法1参考](https://leetcode.cn/problems/remove-nth-node-from-end-of-list/solution/shan-chu-lian-biao-de-dao-shu-di-nge-jie-dian-b-61/)
 
@@ -32,7 +38,7 @@ function removeNthFromEnd(head: ListNode | null, n: number): ListNode | null {
 };
 ```
 
-方法2: 回溯法
+方法2: 后序递归法   时间复杂度 O(n)  空间复杂度：O(n)
 
 ```ts
 let count: number

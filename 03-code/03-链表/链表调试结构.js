@@ -28,37 +28,22 @@ function printedLink(head) {
 }
 
 // 功能代码
-// 输入：head = [1,2,2,1]
-// 输出：true
+// 输入：head = [1,2,3,4,5], n = 2
+// 输出：[1,2,3,5]
 
-function sortList(head) {
-  if (!head  || !head.next) return head;
-  let pivot = head.val;
-  let small = new ListNode(), large = new ListNode();
-  let hSmall = small, hLarge = large, cur = head.next;
-  while (cur) {
-    let val = cur.val;
-    if (val < pivot) {
-      small.next = cur;
-      small = small.next;
-    } else {
-      large.next = cur;
-      large = large.next;
-    }
-    cur = cur.next;
+let lastCount
+function removeNthFromEnd(head, n) {
+  if (!head)  {
+    lastCount = 0
+    return head
   }
-  large.next = null;
-  small.next = head;
-  head.next = null;
-  small = sortList(hSmall.next);
-  large = sortList(hLarge.next);
-  head.next = large;
-  return small;
-}
+  lastCount++
+  return lastCount === n ? head.next : head
+};
+
+
 
 // 输出打印
-const l1 = listToLink([2,1,5,3]);
-const res = sortList(l1);
+const l1 = listToLink([1, 2, 3, 4, 5]);
+const res = removeNthFromEnd(l1, 2);
 printedLink(res);
-
-
