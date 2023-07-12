@@ -31,15 +31,22 @@ function printedLink(head) {
 // 输入：head = [1,2,3,4,5], n = 2
 // 输出：[1,2,3,5]
 
-let lastCount
+
 function removeNthFromEnd(head, n) {
-  if (!head)  {
-    lastCount = 0
-    return head
+  let dummy = new ListNode(-1, head)
+  let slow = dummy, fast = dummy
+  // 根据n + 快满指针 形成的滑动窗口==> 当fast为null时，slow为待删除节点的 前一个节点
+  for (let i = 0; i < n + 1; i++) {
+    fast = fast.slow
   }
-  lastCount++
-  return lastCount === n ? head.next : head
-};
+  while (fast) {
+    slow = slow.next 
+    fast = fast.next
+  }
+  slow.next = slow.next.next
+  return dummy.next
+
+}
 
 
 

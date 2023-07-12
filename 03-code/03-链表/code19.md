@@ -1,11 +1,12 @@
 
-# LeetCode19- 两数相加 II
+# LeetCode19- 删除链表的倒数第N个结点
 
 ## 实现思路
 
 1 实现思路:
+  - 1 迭代法：滑动窗口/快慢指针 
+  - 2 递归法: 后序递归法
 
-  - 递归法: 后序递归法
 
 2 参考文档
 
@@ -15,24 +16,21 @@
 
 ## 代码实现
 
-方法1: 快慢指针  时间复杂度 O(n)  空间复杂度：O(1)
+方法1: 滑动窗口/快慢指针  时间复杂度 O(n)  空间复杂度：O(1)
 
 ```ts
 function removeNthFromEnd(head: ListNode | null, n: number): ListNode | null {
-  if (!head) return head
-  let dummy = new ListNode(-1)
-  dummy.next = head
-  let slow = dummy
-  let fast = dummy.next
-  for (let i = 0; i < n; i++) {
+  let dummy = new ListNode(-1, head)
+  let slow = dummy, fast = dummy
+  // 根据n + 快满指针 形成的滑动窗口==> 当fast为null时，slow为待删除节点的 前一个节点
+  for (let i = 0; i < n + 1; i++) {
     fast = fast.next
   }
-  //S1 找到待删除节点的 前一个节点，此时 fast指向null
   while (fast) {
-    slow = slow.next
+    slow = slow.next 
     fast = fast.next
   }
-  //S2 删除节点
+  // 删除节点
   slow.next = slow.next.next
   return dummy.next
 };
