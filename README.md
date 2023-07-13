@@ -1,22 +1,21 @@
 # my_algo
 算法与数据结构学习
 
-完成数: 40 <br/>
+完成数: 43 <br/>
 
 ## todo
 
-
-61-38-n
-147-4-n
-237-4-n
-
-------------
+---------------
 150-10-y
 71-21-n
 
+----------------
 232-119-y
 225-29-y
 155-81-y
+
+
+
 
 
 
@@ -102,6 +101,9 @@
 
 [code143-135-n](https://github.com/gmYuan/my_algo/blob/main/03-code/03-%E9%93%BE%E8%A1%A8/code143.md): 很综合性的一道题，注意3种递归方法的实现都很有特点，需要多做几次
 
+[code61-38-n](https://github.com/gmYuan/my_algo/blob/main/03-code/03-%E9%93%BE%E8%A1%A8/code61.md): 重点其实是转化题目含义
+
+
 
 ### 2 2个链表相关操作
 
@@ -122,6 +124,8 @@
 
 [code19-120-n](https://github.com/gmYuan/my_algo/blob/main/03-code/03-%E9%93%BE%E8%A1%A8/code19.md)
 
+[code237-4-n](https://github.com/gmYuan/my_algo/blob/main/03-code/03-%E9%93%BE%E8%A1%A8/code237.md)
+
 
 
 ### 4 链表排序
@@ -129,6 +133,11 @@
 [code86-18-n](https://github.com/gmYuan/my_algo/blob/main/03-code/03-%E9%93%BE%E8%A1%A8/code86.md)
 
 [code148-106-y](https://github.com/gmYuan/my_algo/blob/main/03-code/03-%E9%93%BE%E8%A1%A8/code148.md): 比较难的一个链表综合题，可以理解归并+快排
+
+[code147-4-n](https://github.com/gmYuan/my_algo/blob/main/03-code/03-%E9%93%BE%E8%A1%A8/code147.md)
+
+[code23-163-y](https://github.com/gmYuan/my_algo/blob/main/03-code/03-%E9%93%BE%E8%A1%A8/code23.md): 比较难的一个链表题，利用优先队列的解法待 补充完善
+
 
 
 
