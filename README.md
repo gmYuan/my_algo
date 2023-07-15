@@ -1,21 +1,19 @@
 # my_algo
 算法与数据结构学习
 
-完成数: 43 <br/>
+完成数: 45 <br/>
 
 ## todo
-
----------------
-150-10-y
-71-21-n
 
 ----------------
 232-119-y
 225-29-y
 155-81-y
 
-
-
+----------------
+144-78-n
+94-121-n
+145-34-n
 
 
 
@@ -104,7 +102,6 @@
 [code61-38-n](https://github.com/gmYuan/my_algo/blob/main/03-code/03-%E9%93%BE%E8%A1%A8/code61.md): 重点其实是转化题目含义
 
 
-
 ### 2 2个链表相关操作
 
 [code2-104-n](https://github.com/gmYuan/my_algo/blob/main/03-code/03-%E9%93%BE%E8%A1%A8/code2.md)
@@ -127,7 +124,6 @@
 [code237-4-n](https://github.com/gmYuan/my_algo/blob/main/03-code/03-%E9%93%BE%E8%A1%A8/code237.md)
 
 
-
 ### 4 链表排序
 
 [code86-18-n](https://github.com/gmYuan/my_algo/blob/main/03-code/03-%E9%93%BE%E8%A1%A8/code86.md)
@@ -139,12 +135,16 @@
 [code23-163-y](https://github.com/gmYuan/my_algo/blob/main/03-code/03-%E9%93%BE%E8%A1%A8/code23.md): 比较难的一个链表题，利用优先队列的解法待 补充完善
 
 
-
-
-
-
 ## 四 栈
 
 ### 1 map + 栈
 [code20-202-y](https://github.com/gmYuan/my_algo/blob/main/03-code/04-%E6%A0%88/code20.md)
 
+[code150_逆波兰表达式求值-10-y]()
+
+
+
+
+### 2 split + 栈
+
+[code71_简化路径-21-n]()

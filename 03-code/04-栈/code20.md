@@ -4,7 +4,8 @@
 
 1 思维关键词: map + 栈
 
-2 参考文档 <br/ >
+2 参考文档
+
 [01 官方实现](https://leetcode.cn/problems/valid-parentheses/solution/you-xiao-de-gua-hao-by-leetcode-solution/)
 
 
