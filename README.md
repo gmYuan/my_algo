@@ -47,7 +47,7 @@
 ### 4 滑动窗口
 [code209-47-n](https://github.com/gmYuan/my_algo/blob/main/03-code/01-%E6%95%B0%E7%BB%84/code209.md)
 
-[code3-593-y](https://github.com/gmYuan/my_algo/blob/main/03-code/01-%E6%95%B0%E7%BB%84/code3.md)
+[code3_无重复字符的最长子串-593-y](https://github.com/gmYuan/my_algo/blob/main/03-code/01-%E6%95%B0%E7%BB%84/code3.md)
 
 [code76-83-y](https://github.com/gmYuan/my_algo/blob/main/03-code/01-%E6%95%B0%E7%BB%84/code76.md)
 
@@ -85,7 +85,7 @@
 ## 三 链表
 
 ### 1 链表反转
-[code206-548-y](https://github.com/gmYuan/my_algo/blob/main/03-code/03-%E9%93%BE%E8%A1%A8/code206.md)
+[code206_反转链表-548-y](https://github.com/gmYuan/my_algo/blob/main/03-code/03-%E9%93%BE%E8%A1%A8/code206.md)
 
 [code92-166-y](https://github.com/gmYuan/my_algo/blob/main/03-code/03-%E9%93%BE%E8%A1%A8/code92.md): 要多做，很经典的理解 链表和递归 的题目
 

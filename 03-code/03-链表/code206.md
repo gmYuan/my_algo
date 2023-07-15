@@ -19,10 +19,13 @@ function reverseList(head: ListNode | null): ListNode | null {
   let pre = null, cur = head
   while (cur) {
     let temp = cur.next
+    // 修改当前指针指向前一个
     cur.next = pre
+    // 移动pre和cur到下一个节点
     pre = cur
     cur = temp
   }
+  // 到最后pre指向的就是原链表的最后一个节点
   return pre
 };
 ```
