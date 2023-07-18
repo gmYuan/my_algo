@@ -1,34 +1,36 @@
-// 功能实现
-// MyQueue myQueue = new MyQueue();
-// myQueue.push(1); // queue is: [1]
-// myQueue.push(2); // queue is: [1, 2] (leftmost is front of the queue)
-// myQueue.peek(); // return 1
-// myQueue.pop(); // return 1, queue is [2]
-// myQueue.empty(); // return false
-
-// 只能 使用标准的栈操作 
-// 也就是只有 push to top, peek/pop from top, size, 和 is empty 操作是合法的
 
 
-class MyQueue {
+class MyStack {
+	queue: number[]
   constructor() {
-    // 入队栈
-    this.enStack = []
-    // 出队栈
-    this.deStack = []
-  }
+		this.queue = []
+	}
 
-  push(x: number): void { // 1, 2
-    this.enStack.push(x)  // 2, 1
-    this.deStack.push(x)  // 2, 1
-  }
+	/** 目标: 1,2,3 ==> 3,2,1
+		  步骤:  preN     queue
+			 S1     0        1
+			 S2     1       2, 1
+			 S3     2       3, 2,1
+	*/
+  push(x: number): void {
+		let preN = this.queue.length
+		// 加入新元素后，preN此时正好指向最后一个成员
+		this.queue.push(x)
+		while (preN) {
+			this.queue.push(this.queue.shift())
+			preN--
+		}
+	}
 
-  pop(): number {   // 1, 2
-    this.enStack
+  pop(): number {
+		return this.queue.shift()
+	}
 
-  }
+  top(): number {
+		return this.queue[0]
+	}
 
-  peek(): number {}
-
-  empty(): boolean {}
+  empty(): boolean {
+		return this.queue.length === 0
+	}
 }

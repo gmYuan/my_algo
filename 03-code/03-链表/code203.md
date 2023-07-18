@@ -19,19 +19,17 @@ S2 递归法: 是否连接本轮head
 ```ts
 function removeElements(head: ListNode | null, val: number): ListNode | null {
   if (!head) return head
-  let dummy = new ListNode()
-  dummy.next = head
-  let cur = dummy
-  while (cur.next) {
-    if (cur.next.val === val) {
+  let dummy = new ListNode(undefined, head)
+  let pre = dummy
+  while (pre.next) {
+    if (pre.next.val === val) {
       // 找到下一个值不等于val的节点
-      let temp = cur.next  
-      cur.next = temp.next
+      pre.next = pre.next.next
     } else {
-      cur = cur.next
+      pre = pre.next
     }
   }
-  cur.next = null
+  pre.next = null
   return dummy.next
 };
 ```

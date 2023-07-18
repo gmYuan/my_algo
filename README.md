@@ -1,19 +1,20 @@
 # my_algo
 算法与数据结构学习
 
-完成数: 45 <br/>
+完成数: 46 <br/>
 
 ## todo
 
 ----------------
-232-119-y
-225-29-y
 155-81-y
 
 ----------------
 144-78-n
 94-121-n
 145-34-n
+
+----------------------
+341-2-y(339 & 364)
 
 
 
@@ -140,11 +141,15 @@
 ### 1 map + 栈
 [code20-202-y](https://github.com/gmYuan/my_algo/blob/main/03-code/04-%E6%A0%88/code20.md)
 
-[code150_逆波兰表达式求值-10-y]()
-
-
-
+[code150_逆波兰表达式求值-10-y](https://github.com/gmYuan/my_algo/blob/main/03-code/04-%E6%A0%88/code%20150.md)
 
 ### 2 split + 栈
 
-[code71_简化路径-21-n]()
+[code71_简化路径-21-n](https://github.com/gmYuan/my_algo/blob/main/03-code/04-%E6%A0%88/code71.md)
+
+### 3 栈与队列
+
+[code232_用栈实现队列-119-y]()
+
+[code225_用队列实现栈-29-y]()
+

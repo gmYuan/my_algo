@@ -39,7 +39,7 @@ class LinkNode<E> {
   }
 }
 
-class LinkedList<E> {
+ export class LinkedList<E> {
   dummy: LinkNode<E>;
   size: number;
   constructor() {
