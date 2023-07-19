@@ -1,36 +1,32 @@
-
-
-class MyStack {
-	queue: number[]
+class MinStack {
+	stack: number[]
+	min: number
   constructor() {
-		this.queue = []
+		this.stack = []
+		this.min = -1
 	}
 
-	/** 目标: 1,2,3 ==> 3,2,1
-		  步骤:  preN     queue
-			 S1     0        1
-			 S2     1       2, 1
-			 S3     2       3, 2,1
-	*/
-  push(x: number): void {
-		let preN = this.queue.length
-		// 加入新元素后，preN此时正好指向最后一个成员
-		this.queue.push(x)
-		while (preN) {
-			this.queue.push(this.queue.shift())
-			preN--
+  push(val: number): void {
+		if (!this.stack.length) {
+			this.min = val
+		}
+		if (val < this.min) {
+			this.stack.push(this.min)
+			this.stack.push(val)
 		}
 	}
 
-  pop(): number {
-		return this.queue.shift()
+  pop(): void {
+		if (this.stack.pop() === this.min) {
+			this.min = this.stack.pop()
+		}
 	}
 
   top(): number {
-		return this.queue[0]
+		return this.stack[this.stack.length - 1]
 	}
 
-  empty(): boolean {
-		return this.queue.length === 0
+  getMin(): number {
+		return this.min
 	}
 }

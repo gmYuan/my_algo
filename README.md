@@ -1,14 +1,11 @@
 # my_algo
 算法与数据结构学习
 
-完成数: 46 <br/>
+完成数: 47 <br/>
 
 ## todo
 
-----------------
-155-81-y
-
-----------------
+-------------------
 144-78-n
 94-121-n
 145-34-n
@@ -149,7 +146,11 @@
 
 ### 3 栈与队列
 
-[code232_用栈实现队列-119-y]()
+[code232_用栈实现队列-119-y](https://github.com/gmYuan/my_algo/blob/main/03-code/04-%E6%A0%88/code232.md)
 
-[code225_用队列实现栈-29-y]()
+[code225_用队列实现栈-29-y](https://github.com/gmYuan/my_algo/blob/main/03-code/04-%E6%A0%88/code225.md)
+
+[code155_最小栈-81-y]()
+
+
 
