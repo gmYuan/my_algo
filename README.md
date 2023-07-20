@@ -1,18 +1,17 @@
 # my_algo
 算法与数据结构学习
 
-完成数: 47 <br/>
+完成数: 48 <br/>
 
 ## todo
 
 -------------------
+树
 144-78-n
 94-121-n
 145-34-n
 
 ----------------------
-341-2-y(339 & 364)
-
 
 
 
@@ -150,7 +149,9 @@
 
 [code225_用队列实现栈-29-y](https://github.com/gmYuan/my_algo/blob/main/03-code/04-%E6%A0%88/code225.md)
 
-[code155_最小栈-81-y]()
+[code155_最小栈-81-y](https://github.com/gmYuan/my_algo/blob/main/03-code/04-%E6%A0%88/code155.md)
 
+### 4 栈与递归
 
+[code341_扁平化嵌套列表迭代器-2-y](): 可以顺带做一下339 & 364 相关题目
 
