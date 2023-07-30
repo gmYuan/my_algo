@@ -29,30 +29,30 @@ function listToTree(list, index) {
 }
 
 
-// 右子树的右子节点
+// 本节点==> 左节点==> 右节点
 
 // 功能代码
-function rightSideView(root) {
-  if (!root) return []
-  let queue = [{node: root, depth: 0}], res = []
-  while (queue.length) {
-    const { node, depth } = queue.shift()
-    if (!res[depth]) {
-      res[depth] = node.val
-    }
+function preorderTraversal(root: TreeNode | null): number[] {
+  let stack = [{command: 'go', node: root}], res = []
+  while (stack.length) {
+    const {command, node} = stack.pop()
+    if (command === 'print') {
+      res.push(node.val)
+      continue;
+    }   
     if (node.right) {
-      queue.push( {node: node.right, depth: depth + 1})
+      stack.push({ command: 'go', node: node.right })
     }
     if (node.left) {
-      queue.push( {node: node.left, depth: depth + 1})
+      stack.push({ command: 'go', node: node.left })
     }
+    stack.push({ command: 'print', node: node })
   }
   return res
- 
 };
 
 
 
-const bTree = listToTree([1,2,3,null,5,null,4], 0);
 
+const bTree = listToTree([1,2,3,null,5,null,4], 0);
 console.log('rr', rightSideView(bTree))
