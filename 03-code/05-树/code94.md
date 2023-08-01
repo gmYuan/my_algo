@@ -17,27 +17,18 @@ type actionType = {type: 'go' | 'print', node: TreeNode | null}
 
 function inorderTraversal(root: TreeNode | null): number[] {
   if (!root) return []
-
-  let stack: actionType[] = []
-  let res = []
-  const action = (type: actionType['type'], node: actionType['node']) => {
-    return {type, node}
-  }
-  // 入口执行
-  stack.push(action('go', root))
-
-  // 中序遍历执行
+  let stack = [ { action: 'go', node: root } ], res = []
   while (stack.length) {
-    let cur = stack.pop()
-    if (!cur.node) continue;
-    if (cur.type === 'go') {
-      stack.push(action('go', cur.node.right))
-      stack.push(action('print', cur.node))
-      stack.push(action('go', cur.node.left))
-    } else {
-      res.push(cur.node.val)
-    }
+    const { action, node } = stack.pop()
+    if (!node) continue;
 
+    if (action === 'print') {
+      res.push(node.val)
+    } else {
+      stack.push({ action: 'go', node: node.right })
+      stack.push({ action: 'print', node: node })
+      stack.push({ action: 'go', node: node.left })
+    }
   }
   return res
 };
@@ -47,9 +38,8 @@ function inorderTraversal(root: TreeNode | null): number[] {
 ```ts
 function inorderTraversal(root: TreeNode | null): number[] {
   if (!root) return []
-  let res = []
+  let stack = [root], res = []
   let visited = []
-  let stack = [root]
 
   while (stack.length) {
     let cur = stack.pop()
@@ -108,10 +98,12 @@ function inorderTraversal(root: TreeNode | null): number[] {
 // Morris遍历本质: 在每个节点的左递阶段，通过pre.right->cur，来让树结构 链表顺序化
 
 function inorderTraversal(root: TreeNode | null): number[] {
+  if (!root) return []
   let res = []
   let pre = null, cur = root
   while (cur) {
     if (!cur.left) {
+      // 左归阶段
       res.push(cur.val)
       cur = cur.right
     } else {
@@ -121,13 +113,15 @@ function inorderTraversal(root: TreeNode | null): number[] {
         pre = pre.right
       }
       // 其前驱节点不存在右子节点时，说明处于左递阶段
+      // 创建连接关系 + 移动到下一层进行关系创建
       if (!pre.right) {
         pre.right = cur
         cur = cur.left
-      // 其前驱节点存在右子节点时，说明处于左归(右递开始)阶段
       } else {
-        pre.right = null
+        // 其前驱节点存在右子节点时，说明处于左归(右递开始)阶段
+        // 断开连接关系 + 回到上一层父节点
         res.push(cur.val)
+        pre.right = null
         cur = cur.right
       }
     }

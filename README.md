@@ -1,23 +1,29 @@
 # my_algo
 算法与数据结构学习
 
-完成数: 50 <br/>
+完成数: 52 <br/>
 
 ## todo
 
 -------------------------
 树
 
-94-121-n
-144-78-n
 145-34-n
 107-11-n
+104-76-y
+111-19-n
+
+--------------------------
+优先队列
+347-24-y
+
 
 --------------------------
 图
 279-17-n
 127-8-y
 126-1-y
+
 
 
 
@@ -161,7 +167,7 @@
 
 ### 4 栈与递归
 
-[code341_扁平化嵌套列表迭代器-2-y](): 可以顺带做一下339 & 364 相关题目
+[code341_扁平化嵌套列表迭代器-2-y](https://github.com/gmYuan/my_algo/blob/main/03-code/04-%E6%A0%88/code341.md): 可以顺带做一下339 & 364 相关题目
 
 
 
@@ -169,10 +175,14 @@
 
 ### 1 树的遍历
 
-[code102_二叉树的层序遍历-211-y]()
+[code102_二叉树的层序遍历-211-y](https://github.com/gmYuan/my_algo/blob/main/03-code/05_%E6%A0%91/code102.md)
 
-[code103_二叉树的锯齿形层序遍历-193-y](): code102的变形题
+[code103_二叉树的锯齿形层序遍历-193-y](https://github.com/gmYuan/my_algo/blob/main/03-code/05_%E6%A0%91/code103.md): code102的变形题
 
-[code199_二叉树的右视图-112-n](): 同样也是code102的变形题
+[code199_二叉树的右视图-112-n](https://github.com/gmYuan/my_algo/blob/main/03-code/05_%E6%A0%91/code199.md): 同样也是code102的变形题
+
+[code144_二叉树的前序遍历-78-n](https://github.com/gmYuan/my_algo/blob/main/03-code/05_%E6%A0%91/code144.md)
+
+[code94_二叉树的中序遍历-121-n](https://github.com/gmYuan/my_algo/blob/main/03-code/05_%E6%A0%91/code94.md)
 
 
