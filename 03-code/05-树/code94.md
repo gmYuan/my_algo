@@ -1,6 +1,13 @@
 # LeetCode94- 二叉树的中序遍历
 
-## 图示参考
+
+1 思维关键词: 
+  - 方法1: 栈循环 + {action, node}节点法 / visited记录法
+  - 方法2: DFS==> 中序递归 + inorder(root, res)
+  - 方法4: Morris遍历法==> cur + cur.left + pre构造连接
+  
+
+2 参考文档
 
 [01 方法1参考](https://leetcode.cn/problems/binary-tree-inorder-traversal/solution/yan-se-biao-ji-fa-yi-chong-tong-yong-qie-jian-ming/)
 

@@ -30,41 +30,22 @@ function listToTree(list, index) {
 
 
 // 功能代码
-function inorderTraversal(root: TreeNode | null): number[] {
+function postorderTraversal(root: TreeNode | null): number[] {
   if (!root) return []
-  let res = []
-  let pre = null, cur = root
-  while (cur) {
-    if (!cur.left) {
-      // 左归阶段
-      res.push(cur.val)
-      cur = cur.right
+  let res = [], stack = [ {action: 'go', node: root}]
+  while (stack.length) {
+    const { action, node } = stack.pop()
+    if (!node) continue;
+    if (action === 'print') {
+      res.push(node.val)
     } else {
-      // 寻找前继节点
-      pre = cur.left
-      while (pre.right && pre.right !== cur) {
-        pre = pre.right
-      }
-      // 创建连接关系 + 移动到下一层进行创建 
-      if (!pre.right) {
-        pre.right = cur
-        cur = cur.left
-      } else {
-         // 左归阶段: 断开连接关系 + 回到上一层父节点
-        res.push(cur.val)
-        pre.right = null
-        cur = cur.right
-      }
+      stack.push( { action: 'print', node: node})
+      stack.push( { action: 'go', node: node.right})
+      stack.push( { action: 'go', node: node.left})
     }
   }
   return res
-}
-
-
-
-
-
-
+};
 
 
 const bTree = listToTree([1, null, 2, 3], 0);
