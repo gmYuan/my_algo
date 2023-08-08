@@ -1,22 +1,26 @@
 # my_algo
 算法与数据结构学习
 
-完成数: 53 <br/>
+完成数: 56 <br/>
 
 ## todo
 
 -------------------------
 树
 
-104-76-y
-111-19-n
-107-11-n
-
-101-76-y
 226-58-y
 110-77-n
 100-16-n
 222-15-n
+
+112-65-n
+404-5-n
+
+129-74-n
+113-68-n
+257-14-n
+
+437-11-n
 
 --------------------------
 优先队列
@@ -180,7 +184,7 @@
 
 ### 1 树的遍历
 
-[code102_二叉树的层序遍历-211-y](https://github.com/gmYuan/my_algo/blob/main/03-code/05_%E6%A0%91/code102.md)
+[code102_二叉树的层序遍历-211-y](https://github.com/gmYuan/my_algo/blob/main/03-code/05_%E6%A0%91/code102.md): 最重要的基础题
 
 [code103_二叉树的锯齿形层序遍历-193-y](https://github.com/gmYuan/my_algo/blob/main/03-code/05_%E6%A0%91/code103.md): code102的变形题
 
@@ -188,7 +192,15 @@
 
 [code144_二叉树的前序遍历-78-n](https://github.com/gmYuan/my_algo/blob/main/03-code/05_%E6%A0%91/code144.md)
 
-[code94_二叉树的中序遍历-121-n](https://github.com/gmYuan/my_algo/blob/main/03-code/05_%E6%A0%91/code94.md)
+[code94_二叉树的中序遍历-121-n](https://github.com/gmYuan/my_algo/blob/main/03-code/05_%E6%A0%91/code94.md): 需要掌握主要思想
 
 [code145_二叉树的后序遍历-34-n](https://github.com/gmYuan/my_algo/blob/main/03-code/05_%E6%A0%91/code145.md)
+
+[code104_二叉树的最大深度-76-y](https://github.com/gmYuan/my_algo/blob/main/03-code/05_%E6%A0%91/code104.md): 还是code102的变形题
+
+[code111_二叉树的最小深度-19-n](https://github.com/gmYuan/my_algo/blob/main/03-code/05_%E6%A0%91/code111.md)
+
+[code107_二叉树的层序遍历II -11-n](https://github.com/gmYuan/my_algo/blob/main/03-code/05_%E6%A0%91/code107.md): 还是code102的变形题
+
+[code101_对称二叉树-76-y](https://github.com/gmYuan/my_algo/blob/main/03-code/05_%E6%A0%91/code101.md): 关键是弄清题目含义
 
