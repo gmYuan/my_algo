@@ -1,14 +1,13 @@
 # my_algo
 算法与数据结构学习
 
-完成数: 57 <br/>
+完成数: 58 <br/>
 
 ## todo
 
 -------------------------
 树
 
-110-77-n
 100-16-n
 222-15-n
 
@@ -20,6 +19,15 @@
 257-14-n
 
 437-11-n
+
+二分搜索树
+235-6-y
+98-69-y
+450-33-n
+108-14-y
+230-30-y
+236-194-y
+
 
 --------------------------
 优先队列
@@ -204,3 +212,8 @@
 [code101_对称二叉树-76-y](https://github.com/gmYuan/my_algo/blob/main/03-code/05_%E6%A0%91/code101.md): 关键是弄清题目含义
 
 [code226_翻转二叉树-58-y](https://github.com/gmYuan/my_algo/blob/main/03-code/05_%E6%A0%91/code226.md): code101_对称二叉树的变形题
+
+[code110_平衡二叉树-77-n](https://github.com/gmYuan/my_algo/blob/main/03-code/05_%E6%A0%91/code110.md): 主要考察了后序递归的理解
+
+
+
