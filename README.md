@@ -1,14 +1,12 @@
 # my_algo
 算法与数据结构学习
 
-完成数: 61 <br/>
+完成数: 62 <br/>
 
 ## todo
 
 -------------------------
 树
-
-129-74-n
 
 113-68-n
 257-14-n
@@ -223,12 +221,14 @@
 [code100_相同的树-16-n](https://github.com/gmYuan/my_algo/blob/main/03-code/05_%E6%A0%91/code100.md): 基础题
 
 
-## 3 树的性质
+## 3 树的性质/求和
 
 [code222_完全二叉树的节点个数-15-n](https://github.com/gmYuan/my_algo/blob/main/03-code/05_%E6%A0%91/code222.md): 利用了完全二叉树 和 满二叉树的性质，二分查找法很巧妙
 
 [code112_路径总和-65-n](https://github.com/gmYuan/my_algo/blob/main/03-code/05_%E6%A0%91/code112.md): 叶子节点定义
 
 [code404_左叶子之和-5-n](https://github.com/gmYuan/my_algo/blob/main/03-code/05_%E6%A0%91/code404.md): 左叶子节点定义 & 基本类型传参性质
+
+[code129_求根节点到叶节点数字之和-74-n](https://github.com/gmYuan/my_algo/blob/main/03-code/05_%E6%A0%91/code74.md): 学习如何从高位到低位求和性质
 
 
