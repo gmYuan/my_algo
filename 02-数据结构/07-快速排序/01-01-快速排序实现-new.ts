@@ -17,25 +17,6 @@
  *       交换i和j后，才依然满足 [left+1, j] < A && [j+1, i] >= A
  * 
  *   - 当 B > A时，继续自然增加i即可，以保持[j+1,i] >= A 的性质
- *  
- * 
- * 举例  [3, 7, 6, 2, 1, 1]
- * S1 partition(0, 4) --> A = 3, j = 0, i = 1==> 7 > 3, 所以只是i++
- * S2 A = 3, j = 0, i = 2==> 6 > 3, 所以只是i++
- * 
- *                                                               l  j     i
- * S3 A = 3, j = 0, i = 3==> 2 < 3，所以j = 1 + 交换i,j位置后数组为 [3, 2, 6, 7, 1, 1 ]
- * 
- *                                                               l     j     i
- * S4 A = 3, j = 1, i = 4==> 1 < 3，所以j = 2 + 交换i,j位置后数组为 [3, 2, 1, 7, 6, 1 ]
- * 
- *                                                               l        j     i
- * S5 A = 3, j = 2, i = 5==> 1 < 3，所以j = 3 + 交换i,j位置后数组为 [3, 2, 1, 1, 6, 7 ]
- * 
- * S6 交换left,j的位置后，数组为[1, 2, 1, 3, 6, 7] +  返回 j = 3
- *   - 此时完成partiton目标: [left, j-1] < A && [j, right] >= A
-
- * 同理继续执行 partiton(0,1) + partition(3,4)
 
 
  * 快速排序1 存在的问题：
@@ -46,6 +27,7 @@
  *   - 对于元素长度较小情况，直接使用插入排序
  *   - 针对有序情况，随机取A值 而不是固定取left位置的值，这样右倾的概率就无限小
  *
+ * 
  * 针对问题2，优化为 quickSort3：
  *   - 其他步骤的目标和实现都不变，只是partiton实现进行优化
  *   - partiton目标：保证 [left, j] <= base值 && [j+1, right] >= base值 
@@ -149,8 +131,7 @@ class quickSort2 {
 }
 
 
-// 快速排序3-双路快排以优化 重复元素情况
-// 快速排序3-双路快排以优化 重复元素情况
+// 快速排序3- 双路快排以优化 重复元素情况
 class quickSort3 {
   arr: any;
 
@@ -175,8 +156,8 @@ class quickSort3 {
     this.innerSort(p + 1, right);
   }
 
-  // partition目标：把基准元素base 放到其正确排序位置front + 返回其位置索引front
-  // 即[left, front] <= val && [tail, right] >= val
+  // partition目标：把基准元素base 放到其正确排序位置tail + 返回其位置索引tail
+  // 即[left, front-1] <= val && [tail+1, right] >= val
   partition(left, right) {
     const arr = this.arr;
     // 优化点1: 随机化base值，让它随机取值，而不是第1版固定的取最左侧元素
@@ -187,25 +168,21 @@ class quickSort3 {
     let base = arr[left];
     let front = left + 1, tail = right;
     // 始终保持[left+1, front-1] <= base && [tail+1, right] >= base
-    while (true) {
-      while (front <= tail && arr[front] < base) {
-        front++;
-      }
-      while (tail >= front && arr[tail] > base) {
-        tail--;
-      }
+    while (front <= tail) {
+      while (arr[front] < base)  front++;
+      while (arr[tail] > base) tail--;
+      // 注意点3: 这一步是必须的，也是易错点
+      // 因为当front>=tail时，说明[left, front-1]都<=val, [tail+1, right]都>=val
+      // 则此时已经分类完arr所有成员，如果后续再交换front和tail的位置反而会破坏分组的正确性
       if (front >= tail) break;
 
-      // 执行到此处时，必然成立 arr[front]值>=base && arr[tail]值<=base
-      // 此时，交换 front和tail位置，才可保持循环不变量的性质继续成立
+      // 保证了等于base的成员 被均分到了front/tail的各自范围内
       this.swap(front, tail);
       // 移动指针，看下一个元素值
       front++;
       tail--;
     }
-
-    // 经过双路快排后，此时tail必然处于>=base的正确位置，而front会越界了，所以取tail而非front
-    // 交换left和tail后，完成partition目标: [left, tail-1] <= val && [tail+1, right] >= val
+    // 经过上述步骤处理，base的正确位置就是 front-1/tail, 返回任意一个指针即可 
     this.swap(left, tail);
     return tail;
   }
@@ -214,6 +191,48 @@ class quickSort3 {
     [this.arr[i], this.arr[j]] = [this.arr[j], this.arr[i]];
   }
 }
+
+
+
+/** 
+方法1.3: 三路快排  平均时间复杂度:O(nlogn); 空间复杂度: O(logn)
+
+function findKthLargest(nums: number[], k: number): number {
+  const size = nums.length - 1
+  quickSort(nums, 0, size)
+  return nums[size - k + 1]
+}
+
+function quickSort(arr: number[], left: number, right: number) {
+  if (left >= right) return
+  let [less, more] = partition(arr, left, right)
+  quickSort(arr, left, less-1)
+  quickSort(arr, more, right)
+}
+
+function partition(arr: number[], left: number, right: number): number[] {
+  swap(arr, left, Math.floor(Math.random() * (right-left+1) + left))
+  const val = arr[left]
+  // 保持[left+1, less]都<val, [less+1, i)都=val, [more, right]都>val
+  let less = left, more = right + 1, i = left + 1
+  while (i < more) {
+		if (arr[i] < val) {
+      swap(arr, ++less, i++)
+    } else if (arr[i] === val) {
+      i++
+    } else {
+      swap(arr, --more, i)
+    }
+  }
+  swap(arr, left, less)
+  return [less, more]
+}
+
+function swap(arr: number[], i: number, j: number) {
+  [arr[i], arr[j]] = [arr[j], arr[i]]
+}
+*/
+
 
 const temp = [3, 7, 6, 2, 1, 3, 1, 2];
 let ex = new quickSort3(temp);
