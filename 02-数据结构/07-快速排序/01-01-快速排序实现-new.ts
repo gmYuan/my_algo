@@ -34,7 +34,11 @@
  *   - 实现：使用头尾指针法front,tail，保证[left+1, front-1]<= base值 && [tail+1, right]>= base值 
  * 
  * 
-
+ * 进一步对于大量重复元素，可以使用三路快排进行优化-- quickSort4:
+ *   - 目标： 构建3个区间
+ *     [ left,  [left+1, lt],  [lt+1, i-1],  [gt, right] ,    i    ]
+ *        A        都小于A         等于A          大于A       当前循环值
+ * 
 **/
 
 // 快速排序1-基础版
@@ -162,7 +166,7 @@ class quickSort3 {
     const arr = this.arr;
     // 优化点1: 随机化base值，让它随机取值，而不是第1版固定的取最左侧元素
     // [0,1) ==> [0, right-left + 1) ==> [left, right+1)==> 由于可能是0.6 * 11，所以需要向下取整
-    const rdx = Math.floor(Math.random() * (right - left + 1)) + left
+    const rdx = Math.floor(Math.random() * (right - left + 1) + left)
     this.swap(left, rdx);
 
     let base = arr[left];
@@ -193,45 +197,58 @@ class quickSort3 {
 }
 
 
-
-/** 
-方法1.3: 三路快排  平均时间复杂度:O(nlogn); 空间复杂度: O(logn)
-
-function findKthLargest(nums: number[], k: number): number {
-  const size = nums.length - 1
-  quickSort(nums, 0, size)
-  return nums[size - k + 1]
-}
-
-function quickSort(arr: number[], left: number, right: number) {
-  if (left >= right) return
-  let [less, more] = partition(arr, left, right)
-  quickSort(arr, left, less-1)
-  quickSort(arr, more, right)
-}
-
-function partition(arr: number[], left: number, right: number): number[] {
-  swap(arr, left, Math.floor(Math.random() * (right-left+1) + left))
-  const val = arr[left]
-  // 保持[left+1, less]都<val, [less+1, i)都=val, [more, right]都>val
-  let less = left, more = right + 1, i = left + 1
-  while (i < more) {
-		if (arr[i] < val) {
-      swap(arr, ++less, i++)
-    } else if (arr[i] === val) {
-      i++
-    } else {
-      swap(arr, --more, i)
-    }
+// 快速排序4- 三路快排
+class quickSort4 {
+  arr: any;
+  constructor(arr) {
+    this.arr = arr;
   }
-  swap(arr, left, less)
-  return [less, more]
-}
 
-function swap(arr: number[], i: number, j: number) {
-  [arr[i], arr[j]] = [arr[j], arr[i]]
+  sort() {
+    this.innerSort(0, this.arr.length - 1);
+  }
+
+  innerSort(left, right) {
+    if (left >= right) return;
+    const [lt, gt] = this.partition(left, right);
+    // 由于此时[lt, gt-1]都说等于base的值，所以分别继续处理 lt-1和gt的范围成员 即可
+    this.innerSort(left, lt - 1);
+    this.innerSort(gt, right);
+  }
+
+
+  // partition目标：
+  partition(left, right) {
+    // 随机化基准元素
+    const arr = this.arr;
+    const rdx = Math.floor(Math.random() * (right - left + 1) + left)
+    this.swap(left, rdx);
+    // 获取基准值
+    const base = arr[left]
+
+    // 保持[left+1, lt]都<val, [lt+1, i)都=val, [gt, right]都>val
+    let lt = left, gt = right + 1, i = left + 1
+    while (i < gt) {
+      if (arr[i] < base) {
+        // cur < base时， 把 cur放到lt区间 & 扩展lt区间 + 处理下一个值
+        this.swap(i++, ++lt)
+      } else if (arr[i] === base) {
+        i++
+      } else {
+         // cur > base时， 把cur放到gt区间内 + 缩短gt区间；此时i的值就是交换过来的C，继续处理C即可
+        this.swap(i, --gt)
+      }
+    }
+
+    // 把base放到 lt位置，从而更新为 [left, lt-1] < base && [lt, gt-1] === base && [gt, right] > base
+    // 返回 lt 和 gt
+    return [lt, gt]
+  }
+
+  swap(i, j) {
+    [this.arr[i], this.arr[j]] = [this.arr[j], this.arr[i]];
+  }
 }
-*/
 
 
 const temp = [3, 7, 6, 2, 1, 3, 1, 2];
