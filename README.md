@@ -1,16 +1,12 @@
 # my_algo
 算法与数据结构学习
 
-完成数: 62 <br/>
+完成数: 64 <br/>
 
 ## todo
 
 -------------------------
 树
-
-113-68-n
-257-14-n
-
 437-11-n
 
 二分搜索树
@@ -224,6 +220,8 @@
 
 [code110_平衡二叉树-77-n](https://github.com/gmYuan/my_algo/blob/main/03-code/05_%E6%A0%91/code110.md): 主要考察了后序递归的理解
 
+[code257_二叉树的所有路径-14-n](https://github.com/gmYuan/my_algo/blob/main/03-code/05_%E6%A0%91/code257.md): 主要考察了前序遍历/回溯
+
 
 ## 2 树的镜像
 
@@ -239,6 +237,9 @@
 [code222_完全二叉树的节点个数-15-n](https://github.com/gmYuan/my_algo/blob/main/03-code/05_%E6%A0%91/code222.md): 利用了完全二叉树 和 满二叉树的性质，二分查找法很巧妙
 
 [code112_路径总和-65-n](https://github.com/gmYuan/my_algo/blob/main/03-code/05_%E6%A0%91/code112.md): 叶子节点定义
+
+[code113_路径总和II-68-n](https://github.com/gmYuan/my_algo/blob/main/03-code/05_%E6%A0%91/code113.md): DFS + 回溯法
+
 
 [code404_左叶子之和-5-n](https://github.com/gmYuan/my_algo/blob/main/03-code/05_%E6%A0%91/code404.md): 左叶子节点定义 & 基本类型传参性质
 
