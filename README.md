@@ -1,16 +1,12 @@
 # my_algo
 算法与数据结构学习
 
-完成数: 64 <br/>
+完成数: 66 <br/>
 
 ## todo
 
 -------------------------
-树
-437-11-n
-
 二分搜索树
-235-6-y
 98-69-y
 450-33-n
 108-14-y
@@ -240,9 +236,13 @@
 
 [code113_路径总和II-68-n](https://github.com/gmYuan/my_algo/blob/main/03-code/05_%E6%A0%91/code113.md): DFS + 回溯法
 
+[code437_路径总和III-11-n](https://github.com/gmYuan/my_algo/blob/main/03-code/05_%E6%A0%91/code113.md): 前缀法 + 回溯非常难，需要后续加深理解-todo
 
 [code404_左叶子之和-5-n](https://github.com/gmYuan/my_algo/blob/main/03-code/05_%E6%A0%91/code404.md): 左叶子节点定义 & 基本类型传参性质
 
 [code129_求根节点到叶节点数字之和-74-n](https://github.com/gmYuan/my_algo/blob/main/03-code/05_%E6%A0%91/code74.md): 学习如何从高位到低位求和性质
 
 
+## 4 二分搜索树 性质
+
+[code235_二叉搜索树的最近公共祖先-6-y](): 利用二分搜索树性质- 查找
