@@ -1,13 +1,12 @@
 # my_algo
 算法与数据结构学习
 
-完成数: 68 <br/>
+完成数: 69 <br/>
 
 ## todo
 
 -------------------------
 二分搜索树
-108-14-y
 230-30-y
 236-194-y
 
@@ -243,8 +242,10 @@
 
 ## 4 二分搜索树 性质
 
-[code235_二叉搜索树的最近公共祖先-6-y](): 利用二分搜索树性质- 查找
+[code235_二叉搜索树的最近公共祖先-6-y](https://github.com/gmYuan/my_algo/blob/main/03-code/05-%E6%A0%91/code235.md): 利用二分搜索树性质- 查找
 
-[code98_验证二叉搜索树-69-y](): 利用二分搜索树性质 + 中序递归
+[code98_验证二叉搜索树-69-y](https://github.com/gmYuan/my_algo/blob/main/03-code/05-%E6%A0%91/code98.md): 利用二分搜索树性质 + 中序递归
 
-[code450_ 删除二叉搜索树中的节点-33-n](): 递归 + 查找&删除successor
+[code450_ 删除二叉搜索树中的节点-33-n](https://github.com/gmYuan/my_algo/blob/main/03-code/05-%E6%A0%91/code450.md): 递归 + 查找&删除successor
+
+[code108_将有序数组转换为二叉搜索树-14-y](https://github.com/gmYuan/my_algo/blob/main/03-code/05-%E6%A0%91/code108.md): 需要注意其性质的数学证明
