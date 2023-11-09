@@ -1,13 +1,12 @@
 # my_algo
 算法与数据结构学习
 
-完成数: 69 <br/>
+完成数: 70 <br/>
 
 ## todo
 
 -------------------------
 二分搜索树
-230-30-y
 236-194-y
 
 --------------------------
@@ -249,3 +248,6 @@
 [code450_ 删除二叉搜索树中的节点-33-n](https://github.com/gmYuan/my_algo/blob/main/03-code/05-%E6%A0%91/code450.md): 递归 + 查找&删除successor
 
 [code108_将有序数组转换为二叉搜索树-14-y](https://github.com/gmYuan/my_algo/blob/main/03-code/05-%E6%A0%91/code108.md): 需要注意其性质的数学证明
+
+[code230_二叉搜索树中第K小的元素-30-y](https://github.com/gmYuan/my_algo/blob/main/03-code/05-%E6%A0%91/code230.md): 中序递归的使用
+
