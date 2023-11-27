@@ -3,6 +3,7 @@
 1 思维关键词:
   - 方法1: 2次dfs + 回溯
   - 方法2: 单次dfs
+  - 方法3: dfs + 累计mid值
   
 
 2 参考文档
@@ -67,4 +68,32 @@ function lowestCommonAncestor(root, p, q) {
   // 到此说明未查到p/q中的某个值，不存在其公共祖先，返回null即可
   return null
 };
+```
+
+方法3 dfs + 累计mid值   时间复杂度: O(n)  空间复杂度:  O(n)
+
+```ts
+let ret = null
+function lowestCommonAncestor(root, p, q) {
+  // 在leetcode中需要显式定义值，否则会存在问题
+  ret = null
+  dfs(root, p, q)
+  return ret  
+}
+// dfs: 在root中寻找p和q, 如果包含则返回1, 否则返回0
+// root是p或者q; root的左子树包含p或q;  root的右子树包含p或q==> 三个条件有两个满足, 则ret=root
+function dfs(root, p, q) {
+  if (!root) return 0;
+  let mid = 0
+  // 当遇到p/q值，就记录一下遇到了1次
+  if (root === p || root === q) mid = 1;
+  let left = dfs(root.left, p, q)
+  let right = dfs(root.right, p, q)
+  // 只有>=2次，就可以认为找到了p&&q，因为题目保证了节点值每个都不相同
+  // 易错点: 由于是自底向上"归"的，所以继续下第一个ret值即可，否则就是最远祖先节点了
+  if (mid + left + right >= 2 && !ret) {
+    ret = root
+  }
+  return mid + left + right
+}
 ```

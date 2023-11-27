@@ -36,9 +36,34 @@ class arrTobinaryTree {
   }
 }
 
-const arr = [3, 9, 20, null, null, 15, 7];
+// 实现代码
+function lowestCommonAncestor(root, p, q) {
+  if (!root) return null
+  // 当找到p或者q后, 剩下的节点必然不可能是公共祖先节点
+  // 所以可以向上返回,进入 归阶段了
+  if (root === p || root === q) return root
+  // 其实就是通过dfs，尝试在左/右子树中 查找p/q
+  const left = lowestCommonAncestor(root.left, p, q)
+  const right = lowestCommonAncestor(root.right, p, q)
+  // 说明p、q分别在左右子树2侧(非同侧)
+  // 由于递归阶段的归 是自底向上的，所以此时root必然就是他们的最短公共祖先
+  if (left && right) {
+    return root
+  }
+  // 到此说明p/q必然在同侧，由于我们一遇到p/q中在上层的那个就返回了
+  // 所以此时left/right 必然就是同侧节点中在上面的那一个
+  if (left) return left
+  if (right) return right
+  // 到此说明未查到p/q中的某个值，不存在其公共祖先，返回null即可
+  return null
+};
+
+
+
+
+// 调用入口
+const arr = [5,3,6,2,4,null,null,1]
 const root = new arrTobinaryTree(arr);
-console.log("dd", root);
-
-
-// 实现参考文档：https://programmercarl.com/%E5%89%8D%E5%BA%8F/ACM%E6%A8%A1%E5%BC%8F%E5%A6%82%E4%BD%95%E6%9E%84%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91.html#java
+// 功能代码
+const res = lowestCommonAncestor(root, 3);
+console.log(res);
