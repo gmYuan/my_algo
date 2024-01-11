@@ -1,62 +1,35 @@
-// function partition(s) {
-//   let cur = [], res = []
-//   dfs(s, 0, cur, res)
-//   return res
-// };
+let used = []
 
-// function dfs(str, curIdx, cur, res) {
-//   if (curIdx >= str.length) {
-//     res.push(cur)
-//     return
-//   }
-//   for (let i = curIdx; i < str.length; i++) {
-//     if (isPalindrome(str, curIdx, i)) {
-//       cur.push(str.slice(curIdx, i+1))
-//       dfs(str, i+1, cur, res)
-//       cur.pop()
-//     }
-//   }
-// }
-
-// function isPalindrome(str, left, right) {
-//   while (left <= right) {
-//     if (str[left] !== str[right]) return false;
-//     left++
-//     right-- 
-//   }
-//   return true
-// }
-
-
-function partition(s) {
-  let cur = [], res = []
-  dfs(s, 0, cur, res)
+function permute(nums: number[]): number[][] {
+  if (!nums || !nums.length) return []
+  const res = [], depthRes = []
+  used = new Array(nums.length)
+  dfs(nums, 0, depthRes, res)
   return res
 };
 
-function dfs(str, curIdx, cur, res) {
-  if (curIdx >= str.length) {
-     res.push([...cur])
+function dfs(nums, depthIdx, depthRes, res) {
+  if (depthIdx === nums.length) {
+    res.push([...depthRes])
     return
   }
-  for (let i = curIdx; i < str.length; i++) {
-    if (isPalindrome(str, curIdx, i)) {
-      cur.push(str.slice(curIdx, i + 1))
-      dfs(str, i+1, cur, res)
-      cur.pop()
+  for (let i = 0; i < nums.length; i++) {
+    if (!used[i]) {
+      used[i] = true
+      depthRes.push(nums[i])
+      dfs(nums, depthIdx+1, depthRes, res)
+      used[i] = false
+      depthRes.pop()
     }
   }
 }
 
-function isPalindrome(str, left, right) {
-  while (left <= right) {
-    if (str[left] !== str[right]) return false;
-    left++
-    right-- 
-  }
-  return true
-}
 
-let s1 = "aab"
-let tes = partition(s1)
-console.log('dd', tes) 
+nums = [1,2,3]
+const result = permute(nums)
+console.log('result', result)
+
+
+
+
+
