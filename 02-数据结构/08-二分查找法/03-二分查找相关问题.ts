@@ -32,9 +32,8 @@ class binarySearch {
     return this.innerSearch(left, mid - 1)
   }
 
-  // 相关问题1: 在有序数组中查找 大于target值的最小值索引
+  // 相关问题1: 在有序数组中查找 大于target值的 最小值索引
   upper(target) {
-    this.target = target
     // 在 data[l, r]范围内 寻找解
     let l = 0, r = this.data.length
     while (l < r) {
@@ -48,6 +47,18 @@ class binarySearch {
     }
     // 运行到此说明l===r了，说明找到了大于target的最小值，直接返回索引即可
     return l
+  }
+
+   // 相关问题2: ceil: 
+   //   数组内成员值都 >target时，返回 >target的 最小值的 索引
+   //   数组内有成员值 ===target时，返回 ===target的 最大索引
+   ceil(target) {
+    const upperIdx = this.upper(target)
+    // 此时upperIdx为 >target值的 最小值索引，只要看其前一位是不是等于target即可
+    if (upperIdx - 1 >= 0 && this.data[upperIdx-1] === target) {
+      return upperIdx - 1
+    }
+    return upperIdx
   }
 }
 

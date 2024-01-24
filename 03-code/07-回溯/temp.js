@@ -1,35 +1,7 @@
-let used = []
+// code  47-39-y
 
-function permute(nums: number[]): number[][] {
-  if (!nums || !nums.length) return []
-  const res = [], depthRes = []
-  used = new Array(nums.length)
-  dfs(nums, 0, depthRes, res)
-  return res
-};
+// ltcode地址
+// https://leetcode.cn/problems/permutations-ii/description/
 
-function dfs(nums, depthIdx, depthRes, res) {
-  if (depthIdx === nums.length) {
-    res.push([...depthRes])
-    return
-  }
-  for (let i = 0; i < nums.length; i++) {
-    if (!used[i]) {
-      used[i] = true
-      depthRes.push(nums[i])
-      dfs(nums, depthIdx+1, depthRes, res)
-      used[i] = false
-      depthRes.pop()
-    }
-  }
-}
-
-
-nums = [1,2,3]
-const result = permute(nums)
-console.log('result', result)
-
-
-
-
-
+// 参考地址
+// https://github.com/liuyubobobo/Play-Leetcode/blob/master/0001-0500/0047-Permutations-II/cpp-0047/main.cpp
