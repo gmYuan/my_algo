@@ -1,15 +1,14 @@
 # my_algo
 算法与数据结构学习
 
-完成数: 74 <br/>
+完成数: 75 <br/>
 
 ## todo
 
 --------------------------
 递归与回溯法
-47-39-y
-
 39-67-n
+
 40-35-n
 216-1-n
 78-84-y
@@ -261,3 +260,4 @@
 
 [code46_全排列-198-y](https://github.com/gmYuan/my_algo/blob/main/03-code/07-%E5%9B%9E%E6%BA%AF/code46.md): 回溯经典题，优先掌握
 
+[code47_全排列II-39-y](https://github.com/gmYuan/my_algo/blob/main/03-code/07-%E5%9B%9E%E6%BA%AF/code47.md): 回溯经典题，优先掌握
