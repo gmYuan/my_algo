@@ -1,35 +1,33 @@
-// code  39-67-n
-
-// ltcode地址
-// https://leetcode.cn/problems/combination-sum/description/
+// code  40-37-n
 
 // 参考地址
-// https://github.com/liuyubobobo/Play-Leetcode/blob/master/0001-0500/0039-Combination-Sum/cpp-0039/main.cpp
+// https://leetcode.cn/problems/combination-sum-ii/solutions/2363941/40-zu-he-zong-he-iihui-su-qing-xi-tu-jie-7y8s/
 
-function combinationSum(candidates, target) {
-  let res = [], curRes = [];
+function combinationSum2(candidates, target) {
+  const res = [], depthRes = [];
   candidates.sort((a, b) => a - b);
-  dfs(candidates, target, res, curRes, 0);
+  backTrack(candidates, target, res, depthRes, 0);
   return res;
 }
 
-function dfs(arr, target, res, curRes, start) {
+function backTrack(arr, target, res, depthRes, start) {
   if (target === 0) {
-    res.push([...curRes]);
+    res.push([...depthRes]);
     return;
   }
-  // 剪枝1：从 start 开始遍历，避免生成重复子集
   for (let i = start; i < arr.length; i++) {
-    // 剪枝2：若子集和 超过target ，则直接结束循环
-    // 因为数组已排序，后边元素更大，子集和一定超过 target
-    if (target - arr[i] < 0) {
+    const newTarget = target - arr[i];
+    if (newTarget < 0) {
       break;
     }
-    curRes.push(arr[i]);
-    dfs(arr, target - arr[i], res, curRes, i);
-    curRes.pop();
+    if (i > start && arr[i] === arr[i - 1]) {
+      continue;
+    }
+    depthRes.push(arr[i]);
+    backTrack(arr, newTarget, res, depthRes, i + 1);
+    depthRes.pop();
   }
 }
 
-const res = combinationSum([2, 3, 5], 8);
-console.log("rr", res);
+const res2 = combinationSum2([1,2,2,5],5)
+console.log(res2)
