@@ -1,29 +1,55 @@
-// code  216-1-n
+// code  78-84-y
 
 // 参考地址
 
-// 找出所有相加之和为n的 k个数的组合
-function combinationSum3(k: number, n: number): number[][] {
-  let res = [], path = [];
-  backTrack(n, k, res, path, 1);
+const subsets = function (nums) {
+  const res = [];
+  const n = nums.length;
+  for (let state = 0; state < (1 << n); state++) {
+    res.push(getPath(nums, state))
+  }
   return res;
-}
+};
 
-function backTrack(target, maxDepth, res, path, depthStart) {
-  if (maxDepth === 0) {
-    if (target === 0) {
-      res.push([...path]);
+function getPath(arr, state) {
+  let path = [], idx = 0
+  while (state) {
+    if (state & 1) {
+      path.push(arr[idx])
     }
-    return;
-  }
-  for (let i = depthStart; i <= 9; i++) {
-    if (i > target) break;
-    path.push(i);
-    backTrack(target - i, maxDepth - 1, res, path, i + 1);
-    path.pop();
+    state>>
+    idx++
   }
 }
-//                6
-// 1          2  ...      9
 
-// 23..9
+const res = subsets([1,2,3])
+console.log('rr', res)
+
+
+
+/***
+ *        [1,2,3]
+ * state   0: 000==>   []
+ * 
+ *         1:(001 & 001, k=0)==> [1]
+ *            (000)==> /
+ * 
+ *         2:(010 & 001, k=0)==> []
+ *           (001 & 001, k=1)==> [2]
+ *           (000)==> /
+ * 
+ *         3:(011 & 001, k=0)==> [1]
+ *           (001 & 001, k=1)==> [1,2]
+ *           (000)==> /
+ * 
+ *         ......
+ * 
+ *         7:(111 & 001, k=0)==> [1]
+ *           (011 & 001, k=1)==> [1,2]
+ *           (001 & 001, k=2)==> [1,2,3]
+ *           (000)==> /
+ * 
+ * 
+ * 
+ * 
+ */
