@@ -3,7 +3,7 @@
 1 思维关键词: 
   - 方法1: dfs-递归实现
   - 方法2: bfs-队列实现
-  - 方法3: 并查集-todo
+  - 方法3: 并查集 + Set
 
 这是一个图搜索问题。
 在这个问题中，我们可以把整个二维网格看成一个图，每个单元格是图的一个节点。
@@ -30,6 +30,8 @@
 [02-方法2-参考实现](https://github.com/liuyubobobo/Play-Leetcode/blob/master/0001-0500/0200-Number-of-Islands/java-0200/src/Solution3.java)
 
 [03-并查集-参考实现](https://github.com/liuyubobobo/Play-Leetcode/blob/master/0001-0500/0200-Number-of-Islands/java-0200/src/Solution4.java)
+
+[03-2-并查集数据结构](https://segmentfault.com/a/1190000022952886)
 
 
 ## 代码实现
@@ -144,4 +146,98 @@ function bfs(grid, x, y) {
 function inArea(x, y) {
   return x >= 0 && x < m && y >= 0 && y < n
 }
+```
+
+3 方法3 并查集 + Set  时间复杂度: O(m*n);  空间复杂度: O(m*n)
+
+```ts
+/**
+
+将一个(i, j)的二维坐标 转化为一维坐标 的过程
+假设我们有一个m行 n列的二维数组，我们需要将二维坐标(i, j)转化为一维的索引: 
+
+S1 对于行的编号i（假设从0开始），它代表了我们已经过了多少个完整的“行”
+每一个行有n个元素（列的数量）所以，我们已经过了i*n个元素
+
+S2 我们又在当前的行i之中走过了j列，那么总共就走过了i*n + j个元素
+
+S3 因此，二维坐标(i, j)就对应着一维的索引i*n + j
+*/
+
+let m = 0, n = 0;
+let pos = [ [-1, 0], [0, 1], [1, 0], [0, -1] ];
+
+// 并查集类
+class UnionFind {
+  constructor(num) {
+    this.parent = [...Array(num).keys()];
+    this.rank = Array(num).fill(1);
+  }
+  // 寻找所属树的根节点
+  find(p) {
+    // 查询时顺带进行 进行路径压缩，以减少树的高度
+    while (p !== this.parent[p]) {
+      this.parent[p] = this.parent[this.parent[p]];
+      p = this.parent[p];
+    }
+    return p;
+  }
+  // 判断2个节点是否属于同一个集合(树)内
+  isConnected(p, q) {
+    return this.find(p) === this.find(q);
+  }
+  // 把2个节点合并到同一个集合(树)内
+  unionEle(p, q) {
+    const pRoot = this.find(p);
+    const qRoot = this.find(q);
+    if (pRoot === qRoot) return;
+    if (this.rank[pRoot] < this.rank[qRoot]) {
+      this.parent[pRoot] = qRoot;
+    }
+    if (this.rank[qRoot] < this.rank[pRoot]) {
+      this.parent[qRoot] = pRoot;
+      // rank[pRoot] === rank[qRoot]
+    } else {
+      this.parent[pRoot] = qRoot;
+      this.rank[qRoot] += 1;
+    }
+  }
+}
+
+// 判断是否在合法边界内
+function inArea(x, y) {
+  return x >= 0 && x < m && y >= 0 && y < n;
+}
+
+// 主函数
+function numIslands(grid: string[][]): number {
+  if (!grid || !grid.length || !grid[0].length) return 0;
+  (m = grid.length), (n = grid[0].length);
+  const uf = new UnionFind(m * n);
+  // 把相邻岛屿合并成1个集合内
+  for (let i = 0; i < m; i++) {
+    for (let j = 0; j < n; j++) {
+      // 易错点1: 用continue而非break，break会跳过剩下的一整行
+      if (grid[i][j] !== "1") continue;
+      for (let nextPos = 0; nextPos < 4; nextPos++) {
+        let newX = i + pos[nextPos][0];
+        let newY = j + pos[nextPos][1];
+        if (inArea(newX, newY) && grid[newX][newY] === "1") {
+          // 难点: 二维数组坐标 转化为一维数组索引
+          uf.unionEle(i * n + j, newX * n + newY);
+        }
+      }
+    }
+  }
+  // 通过Set收集一共有多少个集合(树),就等价于有多少个岛屿
+  let islands = new Set();
+  for (let i = 0; i < m; i++) {
+    for (let j = 0; j < n; j++) {
+      if (grid[i][j] !== "1") continue;
+      islands.add(uf.find(i * n + j));
+    }
+  }
+  return islands.size
+};
+
 ```
