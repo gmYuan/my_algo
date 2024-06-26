@@ -28,17 +28,20 @@ function printedLink(head) {
 }
 
 // 功能代码
-function removeElements(head, val) {
-  if (!head) return null;
-  if (head.val === val) {
-    return removeElements(head.next, val)
-  } else {
-    head.next = removeElements(head.next, val)
-  }
-  return head
-}
+function reverseList(head) {
+  if (!head || !head.next) return head;
+  // 函数功能语义: 反转了以head为头节点的链表，并返回了反转后的新头节点newHead
+  const newHead = reverseList(head.next)
+  // 注意此时head.next，还指向着 反转后的尾节点， 即 curHead--> newTail <--yyy <-- newHead
+  // 所以想要反转包含curHead的整个链表，通过newTail(即 head.next)就很简单了
+  head.next.next = head
+  // 让curHead的next断开指向newTail，从而避免循环链表
+  head.next = null
+  // 返回整个链表的 新的头结点即可
+  return newHead
+};
 
 // 输出打印
-const l1 = listToLink([7, 7, 7, 7]);
-const res = removeElements(l1);
+const l1 = listToLink([1, 2, 3, 4]);
+const res = reverseList(l1);
 printedLink(res);
