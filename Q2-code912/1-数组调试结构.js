@@ -1,41 +1,93 @@
+function sortArray(nums) {
+  quickSort(nums, 0, nums.length - 1);
+  return nums;
+}
 
-// code215
-function findKthLargest(nums, k) {
-  // 易错点1: 理解题意，第k大的元素，升序表示时的下标必然是len-k
-  const kdx = nums.length - k
-  return quickFind(nums, 0, nums.length -1, kdx)
+function quickSort(arr, l, r) {
+  if (l >= r) return;
+  let [lt, gt] = partiton(arr, l, r);
+  quickSort(arr, l, lt);
+  quickSort(arr, gt, r);
+}
+
+function partiton(arr, l, r) {
+  // 随机获取基准值
+  let rdx = Math.floor(Math.random() * (r - l + 1)) + l;
+  swap(arr, l, rdx);
+  let x = arr[l];
+  // [l+1, lq) < x; [lq, i) === x; (gt, r] > x
+  let lq = l + 1, gt = r, i = l + 1
+  while (i < gt) {
+    if (arr[i] < x) {
+      swap(arr, i, lq)
+    } else if (arr[i] === x) {
+      i++
+    } else {
+      swap(arr, i, gt--)
+    }
+  }
+  swap(arr, l, lq--)
+  return [lq-1, gt+1]
+}
+
+
+
+
+
+function swap(arr, a, b) {
+  [arr[a], arr[b]] = [arr[b], arr[a]];
+}
+
+let res = sortArray([5, 1, 1, 2, 0, 0]);
+console.log("rr", res);
+
+
+
+
+
+/**
+ * 
+ * 
+ * 三路快排正确实现
+ * 
+ * function sortArray(nums: number[]): number[] {
+  quickSort(nums, 0, nums.length - 1);
+  return nums;
 };
 
-function quickFind(arr, l, r, kdx) {
-  // 这句话也可能不写，但是运行到l===r时，经过拆分必然是l===r===kdx的情况，所以提前返回即可
-  if(l === r) return arr[l];
-  const p = partition(arr, l, r)
-  if (p === kdx) return arr[p];
-  if (p < kdx) {
-    return quickFind(arr, p+1, r, kdx)
-  } else {
-    return quickFind(arr, l, p-1, kdx)
-  }
+function quickSort(arr, l, r) {
+  if (l >= r) return;
+  let [lt, gt] = partition(arr, l, r);
+  quickSort(arr, l, lt);
+  quickSort(arr, gt, r);
 }
 
 function partition(arr, l, r) {
-  const rdx = Math.floor(Math.random() * (r - l + 1)) + l
+  let rdx = Math.floor(Math.random() * (r - l + 1))+ l
   swap(arr, l, rdx)
-  // 易错点2: 保证性质: [l+1, i)都<=x, (j, r]都>=x
-  let x = arr[l], i = l + 1, j = r
-  while (1) {
-    while (arr[i] < x) i++;
-    while (arr[j] > x) j--;
-    if (i >= j) break;
-    swap(arr, i++, j--);
+  let x = arr[l]
+
+  // 从l+1开始处理，在循环中保证 [l+1, lt]都<x, [lt+1, i)都===x, [gt, r]都>x
+  let lt = l, gt = r + 1, i = l + 1
+  while (i < gt) {
+    if (arr[i] < x) {
+      swap(arr, i++, ++lt)
+    } else if (arr[i] === x) {
+      i++
+    } else {
+      swap(arr, i, --gt)
+    }
   }
-  // 到此时必然满足 [l+1, i)都<=x, (j, r]都>=x， 且 此时i === j
-  // 此时交换l和j后，就必然可以满足 [j,r]都>=x了 + 而原来arr[j]的值也是<=x的，放到最左边后就会满足[l, i-1]<=x
-  swap(arr, l, j)
-  return j
+  swap(arr, l, lt)
+  // 经过交换后，lt此时的含义是[l+1,lt-1]<x; [lt, gt-1]===x; [gt, r]>x
+  return [lt-1, gt]
 }
 
-function swap(arr, l, r) {
-  [arr[l], arr[r]] = [arr[r], arr[l]]
-}
 
+function swap(arr, a, b) {
+  [arr[a], arr[b]] = [arr[b], arr[a]];
+}
+ * 
+ * 
+ * 
+ */

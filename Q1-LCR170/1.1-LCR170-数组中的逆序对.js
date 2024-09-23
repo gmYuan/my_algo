@@ -1,53 +1,6 @@
-
-## 剑指offer51/ LCR170-数组中的逆序对
-
-Q1: 如何获取【数组中的 逆序对数量】，其实现思路是什么
-
-A:
-
-1 最容易想到的暴力解法是，通过双层遍历一一比较 arr[i]和 arr[i+1~ end]的数值，是逆序对就计数
-
-2 从暴力解法可以看出，要统计逆序对数量，本质上: 成员A一定是需要 和所有非成员A 一一进行比较的
-- a: 归并排序本质上，也会在mergePair这一步，让所有成员都进行一一对标，比如
-
- ``` 
-    a,b,c,d,e,f,g,h
-       ↙      ↘
-     abcd        efgh
-     ↙  ↘       ↙    ↘
-    ab   cd    ef     gh
-    ↙↘   ↙ ↘   ↙ ↘    ↙ ↘
-   a  b  c d   e f   g   h
-   
-   
-开始排序并返回1: a和b会进行比较
-    ba  dc   ef    hg
-    
-开始排序并返回2: a和b已经比较过 + a会和dc进行对比
-    bacd       efgh
-    
-开始排序并返回3: a和bdc已经比较过 + a会和efgh进行对比
-        abcdefgh
-        
-也就是说: a会和除了和a本身的 其他所有元素进行比较
- ```
-
-- b: 归并的第2个特点是: 他的每次归并过程，都会返回有序的数组成员，这就意味着我们可以减少比较次数
-
-```
-如果 bacd, efgh的第一轮比较循环中，b比e大，那么比b大的 acd也一定大于e，不用再让 acd和e 显式比较了
-```
-
---------------------------------------------------------------
-
-Q2: 如何用归并排序思想实现 获取逆序对
-
-A: 方法1: 归并排序 时间复杂度 O(nlogn); 空间复杂度O(n)
-
-```ts
 let copy = [];
 
-function reversePairs(record: number[]): number {
+function reversePairs(record) {
   // 易错点1: 这里不能用copy = [...record]，因为后续每轮递归比较时，都应该是排好序的arr1和arr2
   // 而不是初始时的 从未排序的原始列表情况
   let len = record.length
@@ -104,9 +57,3 @@ function mergePair(arr, l, mid, r) {
   while (p2 <= mid) arr[p3++] = copy[p2++];
   return res;
 }
-```
-
-
-## 该题涉及到的知识点
-
-[Q1.3-归并排序详解](https://github.com/gmYuan/my_algo/blob/main/K2.2-%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/1.2-%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%E7%9B%B8%E5%85%B3.md)
