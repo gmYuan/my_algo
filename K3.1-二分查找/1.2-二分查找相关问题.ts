@@ -3,13 +3,11 @@
  * 
  * 实现思路: 数组有序 + mid二分
  * 
- * 时间复杂度: O(logn)
- * 
 **/
 
 
 // 二分查找1- 递归实现
-class binarySearch {
+class binarySearch3 {
   data: number[];
   target: number;
   constructor(arr) {
@@ -62,6 +60,6 @@ class binarySearch {
   }
 }
 
-const temp = [1,1,2,3,5,9];
-let res = new binarySearch(temp).search(3);
-console.log('res', res)
+const temp3 = [1,1,2,3,5,9];
+let res3 = new binarySearch3(temp3).search(3);
+console.log('res3', res3)
