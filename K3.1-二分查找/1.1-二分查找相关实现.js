@@ -37,12 +37,13 @@ function binarySearch2(arr, target) {
 function upper(arr, target) {
   let l = 0, r = arr.length;
   // 易错点1: 这里r取arr.length && l < r, 
-  // 是因为 r取arr.length-1 && l <=r 时，会出现 l === r === arr.length-1的死循环情况
+  // 是因为
+  //  l取-1, 当arr值都 >target，就有可能让 l<r恒成立 导致死循环
+  //  r取arr.length-1，当arr值都 <=target，就有可能让 l===r 死循环
   while (l < r) {
     let mid = l + ((r - l) >> 1);
-    const cur = arr[mid];
     // 确保[l, r]都是 >= target的: l是增长的 + r是缩小的
-    if (cur < target) {
+    if (arr[mid] < target) {
       l = mid + 1;
     } else {
       r = mid;
