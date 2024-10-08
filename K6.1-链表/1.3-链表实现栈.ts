@@ -1,4 +1,4 @@
-import { LinkedList } from "./01-1.1-链表实现";
+import { LinkedList } from "./1.1-链表实现";
 
 // 用链表实现栈: 链表头进，链表头出即可，复杂度为O(1)
 class LinkedListStack<E> {

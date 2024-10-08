@@ -1,4 +1,4 @@
-import { myArray } from "./01-array";
+import { myArray } from "./1.1-array";
 
 interface IMyQueue<T> {
   getSize(): number;
