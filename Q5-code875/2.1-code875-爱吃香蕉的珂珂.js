@@ -1,22 +1,25 @@
-// 二分查找：
-//   1. 有明确的 搜索范围
-//   2. 搜索范围内成员 满足单调性==> 最值问题
-//   3. 通过【二分查找】不断缩减搜索范围， 最终确定答案
+
+// 示例 1：
+// 输入：piles = [3,6,7,11], h = 8
+// 输出：4
 
 function minEatingSpeed(piles, h) {
   let l = 1, r = Math.max(...piles);
   while (l < r) {
-    let mid = l + ((r - l) >> 1);
-    const usedTime = getTime(piles, mid);
-    if (usedTime <= h) {
-      r = mid;
+    const mid = l + (r - l >> 1)
+    const needTime = calTime(piles, mid)
+    // 获取的是 <=h的 最大值
+    // 如果需要的时间 <=h，说明吃的速度已经够快了，需要减慢速度
+    if (needTime <= h) {
+      r = mid
     } else {
-      l = mid + 1;
+      // 反之 如果需要的时间 >h，说明吃的速度慢了，需要加快速度
+      l = mid + 1
     }
   }
-  return l;
+  return r
 }
 
-function getTime(piles, speed) {
-  return piles.reduce((acc, cur) => acc + Math.ceil(cur / speed), 0);
+function calTime(piles, speed) {
+  return piles.reduce((acc, cur) => acc + Math.ceil(cur / speed), 0)
 }
