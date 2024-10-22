@@ -2,21 +2,34 @@
 
 算法与数据结构学习
 
-已完成题目总数: 6
+已完成题目总数: 11
 
 ## tag1.1 数组-排序
 
-[Q1-LCR170-数组中的逆序对](https://github.com/gmYuan/my_algo/blob/main/Q1-LCR170/2.2-%E5%89%91%E6%8C%87offer51%3ALCR170.md)
+[Q1-LCR170_数组中的逆序对-1n](https://github.com/gmYuan/my_algo/blob/main/Q1-LCR170/2.2-%E5%89%91%E6%8C%87offer51%3ALCR170.md)
 
-[Q2-code912-排序数组](https://github.com/gmYuan/my_algo/blob/main/Q2-code912/2.2-code912.md)
+[Q2-code912_排序数组-9n](https://github.com/gmYuan/my_algo/blob/main/Q2-code912/2.2-code912.md)
 
-[Q3-code75-颜色分类](https://github.com/gmYuan/my_algo/blob/main/Q3-code75/2.1-code75.md)
+[Q3-code75_颜色分类-38y](https://github.com/gmYuan/my_algo/blob/main/Q3-code75/2.1-code75.md)
+
+[Q7-code215_数组中的第K个最大元素-454y]()
+
+[Q9-code88_合并两个有序数组-226y]()
 
 
 ## tag1.2 数组-二分
 
-[Q4-code34-在排序数组中查找元素的第一个和最后一个位置](https://github.com/gmYuan/my_algo/blob/main/Q4-code34/2.2-code34.md)
+[Q4-code34_在排序数组中查找元素的第一个和最后一个位置-75y](https://github.com/gmYuan/my_algo/blob/main/Q4-code34/2.2-code34.md)
 
-[Q5-code875-爱吃香蕉的珂珂](https://github.com/gmYuan/my_algo/blob/main/Q5-code875/2.2-code875.md)
+[Q5-code875_爱吃香蕉的珂珂-8n](https://github.com/gmYuan/my_algo/blob/main/Q5-code875/2.2-code875.md)
 
-[Q6-code1011-在D天内送达包裹的能力](https://github.com/gmYuan/my_algo/blob/main/Q6-code1011/2.2-code1011.md)
+[Q6-code1011_在D天内送达包裹的能力-5n](https://github.com/gmYuan/my_algo/blob/main/Q6-code1011/2.2-code1011.md)
+
+
+## tag1.3 数组-滑动窗口
+
+[Q8-code3_无重复字符的最长子串-783y]()
+
+[Q10-code76_最小覆盖子串-97y]()
+
+[Q11-code209_长度最小的子数组-57n](): 前缀和的技巧需要掌握
