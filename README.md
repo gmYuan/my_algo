@@ -12,9 +12,9 @@
 
 [Q3-code75_颜色分类-38y](https://github.com/gmYuan/my_algo/blob/main/Q3-code75/2.1-code75.md)
 
-[Q7-code215_数组中的第K个最大元素-454y]()
+[Q7-code215_数组中的第K个最大元素-454y](https://github.com/gmYuan/my_algo/blob/main/Q7-code215/2.2-code215.md)
 
-[Q9-code88_合并两个有序数组-226y]()
+[Q9-code88_合并两个有序数组-226y](https://github.com/gmYuan/my_algo/blob/main/Q9-code88/2.2-code88.md)
 
 
 ## tag1.2 数组-二分
@@ -28,8 +28,8 @@
 
 ## tag1.3 数组-滑动窗口
 
-[Q8-code3_无重复字符的最长子串-783y]()
+[Q8-code3_无重复字符的最长子串-783y](https://github.com/gmYuan/my_algo/blob/main/Q8-code3/2.2-code3.md)
 
-[Q10-code76_最小覆盖子串-97y]()
+[Q10-code76_最小覆盖子串-97y](https://github.com/gmYuan/my_algo/blob/main/Q10-code76/2.2-code76.md)
 
-[Q11-code209_长度最小的子数组-57n](): 前缀和的技巧需要掌握
+[Q11-code209_长度最小的子数组-57n](https://github.com/gmYuan/my_algo/blob/main/Q11-code209/2.2-code209.md): 前缀和的技巧需要掌握
