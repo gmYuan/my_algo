@@ -82,6 +82,33 @@ class BST {
     this.preOrderImp(node.left);
     this.preOrderImp(node.right);
   }
+
+  // 中序遍历，递归实现: 先处理节点A的左子节点，再处理节点A，最后处理节点A的右子节点
+  // 中序遍历的特点: 其输出结果是 从小到大排序的
+  inOrder() {
+    this.inOrderImp(this.root);
+  }
+
+  inOrderImp(node) {
+    if (node == null) return;
+    this.inOrderImp(node.left);
+    console.log("中序遍历的元素是", node.data);
+    this.inOrderImp(node.right);
+  }
+
+  // 后序遍历，递归实现: 先处理节点A的左子节点，再处理节点A的右子节点，最后处理节点A
+  postOrder() {
+    this.postOrderImp(this.root);
+  }
+
+  postOrderImp(node) {
+    if (node == null) return;
+    this.postOrderImp(node.left);
+    this.postOrderImp(node.right);
+    console.log("后序遍历的元素是", node.data);
+  }
+
+
 }
 
 
