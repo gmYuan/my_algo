@@ -108,6 +108,22 @@ class BST {
     console.log("后序遍历的元素是", node.data);
   }
 
+  // 前序遍历非递归实现: 利用栈 + 循环判断栈非空
+  preOrderNR() {
+    let stack = []
+    stack.push(this.root)
+    while (stack.length) {
+      const curNode = stack.pop()
+      // 前序处理当前节点
+      console.log('当前节点是', curNode.data)
+      // 先右节点 后左节点，因为栈是后进先出
+      if (curNode.right) stack.push(curNode.right)
+      if (curNode.left) stack.push(curNode.left)
+    }
+  }
+
+  
+
 
 }
 
