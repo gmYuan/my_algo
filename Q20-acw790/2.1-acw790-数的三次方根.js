@@ -1,69 +1,37 @@
-// 790 数的三次方根
+// 给定一个浮点数 n，求它的三次方根。
+// 注意，结果保留 6位小数。
+// 数据范围 −10000 ≤ n ≤ 10000
 
-
-
-
-const readline = require("readline");
+const readline = require('readline');
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
 });
 
-let inputArr = [];
-let n, m;
-let q = [];
-
-rl.on("line", function (line) {
-  inputArr.push(line.trim());
-
-  // 第一行输入 n 和 m
-  if (inputArr.length === 1) {
-    [n, m] = inputArr[0].split(" ").map(Number);
-  }
-  // 第二行输入数组
-  else if (inputArr.length === 2) {
-    q = inputArr[1].split(" ").map(Number);
-  }
-  // 处理每个查询
-  else if (inputArr.length === 2 + m) {
-    // 处理所有查询
-    for (let i = 2; i < inputArr.length; i++) {
-      const x = Number(inputArr[i]);
-      console.log(findRange(q, x));
-    }
-    rl.close();
-  }
+rl.on('line', (input) => {
+  console.log(cubicRoot(parseFloat(input)));
+  rl.close();
 });
 
-function findRange(arr, x) {
-  const len = arr.length;
-  // 查找左边界: >=x的最小值，就必然是 等于x的最左侧位置
-  let l = 0, r = len - 1;
-  while (l < r) {
-    const mid = l + ((r - l) >> 1);
-    // 如果arr[mid] >= x，说明 [mid, r]都>=x，而 我们要找的是最小的>=x的位置， 所以 右区间需要收缩
-    if (arr[mid] >= x) r = mid;
-    // 如果 arr[mid] < x，说明 [l, mid]都<x，不是我们所需要的，所以左区间向右扩增
-    else l = mid + 1;
-  }
-  // 如果没找到目标值
-  if (arr[l] !== x) {
-    return "-1 -1";
-  }
-  // 记录左边界
-  const resL = l;
 
-  // 查找右边界: <=x的最大值，就必然是 等于x的最右侧位置
-  l = 0; r = len - 1;
-  while (l < r) {
-    // 易错点: 
-    const mid = l + ((r - l + 1) >> 1);
-    // 如果arr[mid] <= x，说明 [l, mid]都<=x，而 我们要找的是最大的<=x的位置， 所以 左区间需要扩增
-    if (arr[mid] <= x) l = mid;
-    // 如果 arr[mid] > x，说明 [mid, r]都>x，不是我们所需要的， 所以 右区间需要收缩
-    else r = mid - 1;
+function cubicRoot(n) {
+  let l = -10000, r = 10000
+  // 经验取值: 一般取 要求的保留小数位数 + 2
+  // 易错点1: 1 ^ 10e-8 写作是 1e-8
+  while (r - l > 1e-8) {
+    // 易错点2: 不能是 l + r >> 1 取整，因为求的是浮点数
+    const mid = (l + r) / 2
+    // 易错点3: ^ 在JS里是 异或运算符，可以用 Math.pow
+    if (mid * mid * mid <= n) {
+      l = mid
+    } else {
+      // 易错点4: 不能是 r = mid - 1，因为求的是浮点数的立方根
+      // 对于连续的实数解，需要通过不断缩小区间来逼近解，
+      // 而不能像整数二分那样，可以直接跳过某些值
+      r = mid
+    }
   }
-
-  // 返回结果
-  return `${resL} ${l}`;
+  // 结果需要保留6位小数
+  return l.toFixed(6)
 }
+

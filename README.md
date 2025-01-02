@@ -2,7 +2,7 @@
 
 算法与数据结构学习
 
-已完成题目总数: 19
+已完成题目总数: 20
 
 ## tag1.1 数组-排序
 
@@ -21,13 +21,13 @@
 
 [Q4-code34_在排序数组中查找元素的第一个和最后一个位置-75y](https://github.com/gmYuan/my_algo/blob/main/Q4-code34/2.2-code34.md)
 
-[Q20-acw789_数的范围]()
-
 [Q5-code875_爱吃香蕉的珂珂-8n](https://github.com/gmYuan/my_algo/blob/main/Q5-code875/2.2-code875.md)
 
 [Q6-code1011_在D天内送达包裹的能力-5n](https://github.com/gmYuan/my_algo/blob/main/Q6-code1011/2.2-code1011.md)
 
 [Q19-acw789_数的范围]()
+
+[Q20-acw790_数的三次方根]()
 
 
 ## tag1.3 数组-滑动窗口
