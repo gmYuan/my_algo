@@ -1,44 +1,43 @@
-function subLargeNumber(num1, num2) {
-  // 按低位-->高位 顺序生成每位的 数组
-  let num1Arr = String(num1).split("").reverse();
-  let num2Arr = String(num2).split("").reverse();
-  let res = [];
-  if (compare(num1Arr, num2Arr)) {
-    res = subImp(num1Arr, num2Arr);
+function bigSub(num1, num2) {
+  // 按 低位--> 高位的 顺序传入arr
+  let arr1 = String(num1).split("").reverse();
+  let arr2 = String(num2).split("").reverse();
+  // 让传入的必然是a >= b
+  if (compare(arr1, arr2)) {
+    return subImp(arr1, arr2);
   } else {
-    res = subImp(num2Arr, num1Arr);
-    // num1 < num2，那么 num1 - num2 的结果 需要添加负号
-    res.push("-");
+    // 此时说明num1 < num2，需要在结果前加上负数
+    return "-" + subImp(arr2, arr1);
   }
-  return res.reverse().join("");
 }
 
-// 比较num1和num2大小，返回是否有 num1>= num2
-function compare(num1, num2) {
-  if (num1.length !== num2.length) return num1.length > num2.length;
-  // 倒序从 高位-->低位 比较每一位
-  for (let i = num1.length - 1; i >= 0; i--) {
-    if (num1[i] !== num2[i]) return num1[i] > num2[i];
+// 比较arr1和arr2大小，返回是否有 arr1>= arr2
+function compare(arr1, arr2) {
+  if (arr1.length !== arr2.length) return arr1.length > arr2.length;
+  // 易错点1: 需要 倒序从 高位-->低位 比较每一位
+  for (let i = arr1.length - 1; i >= 0; i--) {
+    if (arr1[i] !== arr2[i]) return arr1[i] > arr2[i];
   }
-  // 运行到这一步，说明每一位都相等，则num1 >= num2 还是成立的
+  // 运行到这一步，说明每一位都相等，则arr1 >= arr2 还是成立的
   return true;
 }
 
-// 具体大数相减实现，注意到这一步已经确保 num1 >= num2
-function subImp(num1, num2) {
+// 传入参数会保证 a>=b, 且是按 低位--> 高位的 顺序
+function subImp(a, b) {
   let res = [];
   let carry = 0;
-  // 从低位-->高位 每一位相减
-  for (let i = 0; i < num1.length; i++) {
-    let curVal = num1[i] - carry - (+num2[i] || 0);
+  for (let i = 0; i < a.length; i++) {
+    let val = Number(a[i]) - (Number(b[i]) || 0) - carry;
     // 重点:  (curVal + 10) % 10 的表达式能 同时处理相减后 正数和负数的情况
-    res.push((curVal + 10) % 10);
-    carry = curVal < 0 ? 1 : 0;
+    res.push((val + 10) % 10);
+    carry = val < 0 ? 1 : 0;
   }
-  // 去除res中多余的前置0
-  while (res.length > 1 && res[res.length - 1] === 0) res.pop();
-  return res;
+  // 会有存在前导0的情况，比如比如计算 1000 - 999 = 001
+  // 易错点2: 需要确保 res.length > 1，不然当结果是0时，会返回空字符串
+  while (res[res.length - 1] === 0 && res.length > 1) res.pop();
+  return res.reverse().join("");
 }
 
-let ex = subLargeNumber(123, 456);
+
+let ex = bigSub(123, 456);
 console.log(ex);
