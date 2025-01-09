@@ -28,7 +28,6 @@ S6 getNode/contains(查):
 
 */
 
-
 class LinkNode<E> {
   val: E;
   next: LinkNode<E>;
@@ -38,7 +37,7 @@ class LinkNode<E> {
   }
 }
 
- export class LinkedList<E> {
+export class LinkedList<E> {
   dummy: LinkNode<E>;
   size: number;
   constructor() {
@@ -116,6 +115,18 @@ class LinkNode<E> {
       curNode = curNode.next;
     }
     return false;
+  }
+
+  // 查找值为val的节点的索引，不存在返回-1
+  find(val: E): number {
+    let curNode = this.dummy.next;
+    let index = 0;
+    while (curNode) {
+      if (val === curNode.val) return index;
+      curNode = curNode.next;
+      index++;
+    }
+    return -1;
   }
 
   // 删除index位置的Node, 返回被删除节点的值

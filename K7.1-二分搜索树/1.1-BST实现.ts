@@ -16,8 +16,6 @@
  *
  **/
 
-export {};
-
 class TNode {
   data: number | undefined;
   left: TNode;
@@ -29,7 +27,7 @@ class TNode {
   }
 }
 
-class BST {
+export class BST {
   root: TNode | null;
   size: number;
   constructor() {
