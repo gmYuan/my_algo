@@ -13,34 +13,30 @@
 // 总结出这道题涉及的思维技巧，我怎么做到在长时间不做这一道题后，还能再想起来怎么做
 
 /**
-自顶向下思维技巧：
+快速排序- 自顶向下思维技巧：
 
-1 归并排序的步骤：
-  - 把数据分成两半：找到中点并分割==> 快慢指针
-  - 对每一半 递归排序==> 中序递归
-  - 合并两个有序序列==> 合并两个有序链表
+1 快速排序-普遍性：
+  - 确定pivot==> 随机/中点/首尾 位置
+  - partition==> 把<=x的放左区间 + 把>=x的放右区间
+  - 把 x 放到正确位置（左右分区的中间）
+  - 递归快速排序左区间子序列 + 递归快速排序右区间子序列
 
 
-2 链表中点切割==> 快慢指针
-  - 不完全平均的分割 并不影响算法的正确性，因为 递归会持续分割 直到不能再分
-  - 即 从正确性角度：任意位置切割都可以
-  - 但是从性能角度：中点附近切割→ O(n log n)，随机位置切割→ 最坏是 O(n^2)
-
+2 链表快排-特殊性:
+  - 无法随机访问元素，选择pivot通常使用 头节点/链表中点
+  - 通过next指针而不是交换，来正确排序 链表节点
  */
 
+
 function sortList(head) {
-  if (!head || !head.next) return head;
-  // 获取中点 + 分割链表==> 快慢指针
-  let slow = head, fast = head, mid = null;
-  while (fast && fast.next) {
-    mid = slow;
-    slow = slow.next;
-    fast = fast.next.next;
-  }
-  slow.next = null;
-  // 中序递归
-  const l1 = sortList(head);
-  const l2 = sortList(mid);
-  // 合并链表
-  return merge(l1, l2);
+  if (!head || !head.next) return head
+  // 1 确定pivot
+  let pivot = head
+  // 2.1 partition- 设定左右区间
+  let smallH = 
+
+
+
+
+  
 }

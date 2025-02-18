@@ -3,13 +3,11 @@
 
 1 思维关键词: 
 
-S2 递归法: getMid(slow + fast) +  递阶段拆分 + 归阶段排序(merge)
 
 S3 快排法：中序递归法
 
 2 参考文档
 
-[02 方法1&2代码参考](https://leetcode.cn/problems/sort-list/solution/pai-xu-lian-biao-di-gui-die-dai-xiang-jie-by-cherr/)
 
 [03 快排实现参考](https://leetcode.cn/problems/sort-list/solution/tie-yi-ge-kuai-su-pai-xu-de-dai-ma-mian-36ay1/)
 
