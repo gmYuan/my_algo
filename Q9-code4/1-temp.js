@@ -67,22 +67,38 @@
 
 */
 
-
 function findMedianSortedArrays(nums1, nums2) {
-  if (nums1.length > nums2.length) {
-    [nums1, nums2] = [nums2, nums1]
-  }
   // 保证 nums1 是 较短的数组
-  const m = nums1.length
-  const n = nums2.length
-  // 保证 i 的较小长度的数组，确保i/j的 取值范围不会越界
-  let l = 0, r = m
-  while (l <= r) {
-    let i = (l + r + 1) / 2
-    let j = (m + n + 1) / 2 - i
-    
-    
+  if (nums1.length > nums2.length) {  
+    [nums1, nums2] = [nums2, nums1];
   }
-  
-  
-};
+  const m = nums1.length;
+  const n = nums2.length;
+
+  // 保证i是在 较小长度的数组里取值的，确保i/j的 取值范围不会越界
+  let l = 0, r = m;
+  while (l <= r) {
+    let i = Math.floor((l + r) / 2);
+    let j = Math.floor((m + n + 1) / 2) - i;
+    // 易错点1：如果是 nums1[i - 1] || -Infinity 的写法
+    // 那么在遇到 nums1[i - 1]为0时，也会错误返回 -Infinity，而不是0
+    const maxL1 = nums1[i - 1] ?? -Infinity;
+    const maxL2 =  nums2[j - 1] ?? -Infinity;
+    const minR1 = nums1[i] ?? Infinity;
+    const minR2 = nums2[j] ?? Infinity;
+    // 说明maxL1应该在R1而不是L1, i左移减少
+    if (maxL1 > minR2) {
+      r = i - 1;
+    } else if (maxL2 > minR1) {
+      // 说明maxL2应该在R2而不是L2, j需要左移减少==> i需要右移增大
+      l = i + 1;
+    } else {
+      // m+n是奇数，则直接返回maxL
+      // m+n是偶数，则返回(maxL + minR) / 2
+      return (m + n) % 2 === 1
+        ? Math.max(maxL1, maxL2)
+        : (Math.max(maxL1, maxL2) + Math.min(minR1, minR2)) / 2;
+    }
+  }
+
+}
