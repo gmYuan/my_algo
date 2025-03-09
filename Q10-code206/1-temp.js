@@ -16,4 +16,26 @@
 */
 
 
+function reverseList(head) {
+  if (!head || !head.next) return head;
+  let pre = null, cur = head
+  while (cur) {
+    let willNext = cur.next
+    cur.next = pre
+    pre = cur
+    cur = willNext
+  }
+  return pre
+}
+
+
+function reverseList2(head) {
+  if (!head || !head.next) return head;
+  let newHead = reverseList2(head.next)
+  head.next.next = head
+  head.next = null
+  return newHead
+}
+
+
 
