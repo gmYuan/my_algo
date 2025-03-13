@@ -2,7 +2,7 @@
 
 算法与数据结构学习
 
-已完成题目总数: 10
+已完成题目总数: 12
 
 
 ## Tag1.1 链表- 排序
@@ -13,6 +13,8 @@
 ## Tag1.2 链表- 反转/指针处理
 
 [Q10-code206_反转链表-642y](https://github.com/gmYuan/my_algo/blob/main/Q10-code206/2.2-code206.md)
+
+[Q11-code876_链表的中间结点-15y]()
 
 
 ## Tag2.1 数组- 排序
@@ -35,5 +37,7 @@
 [Q7-acw789_数的范围-n](https://github.com/gmYuan/my_algo/blob/main/Q7-acw789/2.2-acw789.md)
 
 [Q9-code4_寻找两个正序数组的中位数-137y](https://github.com/gmYuan/my_algo/blob/main/Q9-code4/2.2-code4.md)
+
+[Q12-acw790_数的三次方根-n]()
 
 
