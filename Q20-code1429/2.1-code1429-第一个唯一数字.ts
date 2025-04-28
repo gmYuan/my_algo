@@ -73,20 +73,41 @@ firstUnique.showFirstUnique(); // 返回 -1
 
 
 class FirstUnique {
-  private nums: number[];
-  private uniqueMap: Map<number, number>;
-
+  private uniqueMap: Map<number, Boolean> = new Map()
+  private q: number[] = []
+  private qIdx: number = 0
+ 
   constructor(nums: number[]) {
-    this.nums = nums;
-    this.uniqueMap = new Map();
+    for (let val of nums) {
+      this.add(val)
+    }
+  }
+
+  add(value: number): void {
+    // 记录当前数字value 是否唯一
+    if (!this.uniqueMap.has(value)) {
+      this.uniqueMap.set(value, true)
+    } else {
+      this.uniqueMap.set(value, false)
+    }
+
+    // 如果当前数字value 是唯一的，则加入队列
+    if (this.uniqueMap.get(value)) {
+      this.q.push(value)
+    }
+
+    // 把 qIdx 指向 队列中的第一个 唯一数字
+    while (this.qIdx < this.q.length && !this.uniqueMap.get(this.q[this.qIdx])) {
+      this.qIdx++
+    }
   }
 
   showFirstUnique(): number {
-
+    if (this.qIdx < this.q.length) {
+      return this.q[this.qIdx]
+    }
+    return -1
   }
 
-  add(value: number): void {  
-
-  }
 }
 

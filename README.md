@@ -2,7 +2,7 @@
 
 算法与数据结构学习
 
-已完成题目总数: 19/100
+已完成题目总数: 21/100
 
 
 ## Tag1.1 链表- 排序
@@ -46,17 +46,23 @@
 
 ## Tag2.2 数组- 二分查找
 
-[Q7-acw789_数的范围-n](https://github.com/gmYuan/my_algo/blob/main/Q7-acw789/2.2-acw789.md)
+[Q7-acw789_数的范围-0n](https://github.com/gmYuan/my_algo/blob/main/Q7-acw789/2.2-acw789.md)
 
 [Q9-code4_寻找两个正序数组的中位数-137y](https://github.com/gmYuan/my_algo/blob/main/Q9-code4/2.2-code4.md)
 
-[Q12-acw790_数的三次方根-n](https://github.com/gmYuan/my_algo/blob/main/Q12-acw790/2.2-acw790.md)
+[Q12-acw790_数的三次方根-0n](https://github.com/gmYuan/my_algo/blob/main/Q12-acw790/2.2-acw790.md)
 
 
 ## Tag3.1 栈和队列
 
 [Q17-code225_用队列实现栈-29y]()
 
-[Q18-code346-从数据流中移动平均值-y]()
+[Q18-code346-从数据流中移动平均值-0y]()
 
 [Q19-code281-之字形迭代器-1y]()
+
+[Q20-code1429-第一个唯一数字-0y]()
+
+[Q21-code54-螺旋矩阵-218y]()
+
+[Q22-code362-敲击计数器-2y]()
