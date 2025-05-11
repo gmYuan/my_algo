@@ -11,35 +11,31 @@ void pop() 删除堆栈顶部的元素。
 int top() 获取堆栈顶部的元素。
 int getMin() 获取堆栈中的最小元素。
 
-
-解法1：
-https://leetcode.cn/problems/min-stack/solutions/243226/3-chong-fang-fa-shi-xian-bi-xu-miao-dong-by-sweeti/
-
-
-解法2：
-https://leetcode.cn/problems/min-stack/solutions/2974438/ben-zhi-shi-wei-hu-qian-zhui-zui-xiao-zh-x0g8/
-
-解法3：插值法
-
-
-
 */
 
-class MinStack {
-  private stack: Array<{ number: number }> = [];
-  private min: number
 
+export {}
+
+class MinStack {
+  stack: Array<number[]>
+ 
   constructor() {
-    this.stack = [{ 0: 0 }];
+    this.stack = [[Number.MIN_VALUE, Number.MIN_VALUE]]
   }
 
   push(val: number): void {
-    this.stack.push({val: Math.min() })
+    this.stack.push([val, Math.min(this.getMin(), val)])
   }
 
-  pop(): void {}
+  pop(): void {
+    this.stack.pop()
+  }
 
-  top(): number {}
+  top(): number {
+    return this.stack[this.stack.length - 1][0]
+  }
 
-  getMin(): number {}
+  getMin(): number {
+    return this.stack[this.stack.length - 1][1]
+  }
 }
