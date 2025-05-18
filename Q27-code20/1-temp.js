@@ -1,47 +1,11 @@
-# code224-基本计算器
-
-## 实现思路
-
-### 1 双栈实现
-
-1 双栈设计：
-  - 数字栈：存储所有数字
-  - 操作符栈：存储运算符和括号
-
-2 核心思想：
-  - 遇到数字直接入栈
-  - 遇到运算符时，比较优先级，决定是否计算
-  - 遇到括号时特殊处理
-  - 保持较高优先级的运算符先计算
-
-3 优先级处理：
-  - 括号具有最高优先级
-  - 乘除 > 加减
-  - 同级运算符从左到右计算
-
-4 统一处理负数
-  - 将负数统一转换为减法运算
-  - -n 转换为 0-n
-
-## 参考文档
-
-[01- 方法1直接参考文档](https://leetcode.cn/problems/basic-calculator-ii/solutions/648832/shi-yong-shuang-zhan-jie-jue-jiu-ji-biao-c65k/)
-
-
-
-## 代码实现
-
-1 方法1: 双栈实现   时间复杂度 O(n)  空间复杂度：O(n)
-
-```ts
 function calculate(s: string): number {
   const opes = [], nums = [0];
   // 隐藏的优选级：()括号 的优先级最高
   const opePriority = { "+": 1, "-": 1, "*": 2, "/": 2 };
   let lastChar = "";
-
   // 替换掉所有空格
   s = s.replace(/\s/g, "");
+
   // 遍历字符串
   for (let char of s) {
     // 是左括号
@@ -70,6 +34,7 @@ function calculate(s: string): number {
       while ((opePriority[opes.at(-1)] ?? -1) >= opePriority[char]) {
         getCal(nums, opes);
       }
+
       // 存入当前运算符
       opes.push(char);
     }
@@ -78,7 +43,7 @@ function calculate(s: string): number {
   // 易错点4: 当遍历完字符串后，可能栈中还有运算符，此时 需要进行剩余值计算
   while (opes.length) getCal(nums, opes);
   return nums.at(-1);
-};
+}
 
 function getCal(nums, opes) {
   const [v2, v1] = [nums.pop(), nums.pop()];
@@ -92,6 +57,3 @@ function getCal(nums, opes) {
   const fn = fnMap[ope];
   nums.push(fn(v1, v2));
 }
-```
-
-
