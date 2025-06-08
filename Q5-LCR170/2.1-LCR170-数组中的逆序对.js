@@ -3,11 +3,10 @@ let copy = [];
 function reversePairs(record) {
   // 易错点1: 这里不能用copy = [...record]，因为后续每轮递归比较时，都应该是排好序的arr1和arr2
   // 而不是初始时的 从未排序的原始列表情况
-  let len = record.length
-  copy = new Array(len)
+  let len = record.length;
+  copy = new Array(len);
   return mergeSort(record, 0, len - 1);
-};
-
+}
 
 function mergeSort(arr, l, r) {
   if (l >= r) return 0;
@@ -25,17 +24,19 @@ function mergeSort(arr, l, r) {
 }
 
 function mergePair(arr, l, mid, r) {
- // 易错点2.1: 这里不能使用copy = arr.slice(l, r+1)，因为这样会形成索引位置偏移
+  // 易错点2.1: 这里不能使用copy = arr.slice(l, r+1)，因为这样会形成索引位置偏移
   // 即 recode[5~9]会偏移为copy[0,4]，导致后续从copy[l/mid]取值比较时，会形成空值比较
   // 导致 record数组内容错误 && res值计算错误
 
   // 易错点2.2: 这里不能使用copy = [...arr], 因为存在用例会导致超时
   for (let i = l; i <= r; i++) {
-    copy[i] = arr[i]
+    copy[i] = arr[i];
   }
 
- // 开始比较和合并
-  let p1 = l, p2 = mid + 1, p3 = l;
+  // 开始比较和合并
+  let p1 = l,
+    p2 = mid + 1,
+    p3 = l;
   let res = 0;
 
   while (p1 <= mid && p2 <= r) {

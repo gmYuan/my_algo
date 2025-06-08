@@ -32,11 +32,12 @@
 export {};
 
 function minRemoveToMakeValid(s: string): string {
-  let lefts = [], removes = new Set();
+  let lefts = [],
+    removes = new Set();
   const chars = [...s];
   chars.forEach((char, i) => {
-    if (char === "(") lefts.push(i);
-    if (char === ")") lefts.length ? lefts.pop() : removes.add(i);
+    if (char === '(') lefts.push(i);
+    if (char === ')') lefts.length ? lefts.pop() : removes.add(i);
   });
-  return chars.filter((_, i) => !removes.has(i) && !lefts.includes(i)).join("");
+  return chars.filter((_, i) => !removes.has(i) && !lefts.includes(i)).join('');
 }
