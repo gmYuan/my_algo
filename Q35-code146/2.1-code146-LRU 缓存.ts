@@ -39,64 +39,34 @@ lRUCache.get(4);    // 返回 4
 
 export {};
 
-
-/*
-
-get:
-  - 需要一个Node，来存储{ key: val }
-  - 需要一个Map,来O(1)判断 是否存在；存在 ? node.val : -1
-  - 需要把 Node放到最前面：moveToFirst: delNode + AddToFirst
-
-
-put:
-  - 需要一个Map,来O(1)判断 是否存在；存在 ? 更新 node.val : AddToFirst
-  - 如果此时 Map.size > Cap, 则需要删除最后一个接口：delLast
-  - 注意1：delLast时，还需要同时删除掉 Map里的记录
-
-
-由上可知：
-  - get里的存在性判断，可以通过Map 来实现O(1)
-  - AddToFirst可以通过 (单向)链表dummy 实现
-  - 但是 delNode 怎么O(1)实现？
-
-  - put里的存在性判断，可以通过Map 来实现O(1)
-  - 但是 delLast 怎么O(1)实现？
-  - delLast时，还需要同时删除掉 Map里的记录：这个通过key的关联关系 就能O(1)实现
-
-
-*/
-
-class myNode {
-  key: number
-  val: number
-  pre: myNode | null
-  next: myNode | null
-  constructor(key: number, val: number) {
-    this.key = key
-    this.val = val
-    this.pre = null
-    this.next = null
-  }
-}
-
-class dbLinked {
-  
-}
-
+// 方法2：直接使用Map的有序性：最新的总是在最后一个
+// ES6 Map的特性：Map会记住键的插入顺序
+// keys().next().value 总是返回最早插入的键
 
 class LRUCache {
+  cache: Map<number, number>;
+  cap: number;
 
   constructor(capacity: number) {
-    
-      
-
+    this.cache = new Map();
+    this.cap = capacity;
   }
 
   get(key: number): number {
-      
+    const val = this.cache.get(key);
+    if (val == null) return -1;
+    // 如果存在key, 则先del，再set，从而更新key的位置 到最新的
+    this.cache.delete(key);
+    this.cache.set(key, val);
+    return val;
   }
 
   put(key: number, value: number): void {
-      
+    this.cache.delete(key);
+    this.cache.set(key, value);
+    if (this.cache.size > this.cap) {
+      const firstKey = this.cache.keys().next().value;
+      this.cache.delete(firstKey);
+    }
   }
 }
