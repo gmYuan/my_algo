@@ -23,22 +23,16 @@
 
 export {};
 
-/**
-
-
-*/
-
 function mySqrt(x: number): number {
-  // 46340是 2^31 - 1 的平方根
-  let l = 0, r = Math.min(x, 46340) + 1;
-  while (l + 1 < r) {
+  if (x === 0 || x === 1) return x;
+
+  let l = 0, r = x > 1 ? x : 1;
+  const eps = 0.01
+
+  while (r - l > eps) {
     const mid = l + ((r - l) >> 1);
-    mid * mid <= x ? (l = mid) : (r = mid);
+    mid * mid < x ? (l = mid) : (r = mid);
   }
-  return l;
+
+  return ~~((l + r) / 2)
 }
-
-
-// 变形题1： 求平方根，误差小于0.00001
-// 变形题2： 求平方根，精确到小数点后10位
-// https://leetcode.cn/problems/sqrtx/solutions/1309968/gojian-ji-er-fen-gai-bian-wei-jing-que-d-p4ow/
