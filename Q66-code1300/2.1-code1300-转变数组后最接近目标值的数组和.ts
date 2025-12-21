@@ -33,77 +33,47 @@
 
 export {};
 
-/*
-
-1 思路分析
-
-1.1 理解题目：
-  - 有一个数组 arr 和目标值 target
-  - 找一个数 value
-  - 把数组中所有大于 value 的数都改成 value
-  - 让新数组的和尽可能接近 target
-
-1.2.1 最简单直接的思路，即 暴力解法
-  - 题目要求找出一个 value，那就尝试所有可能的 value，看哪个最接近
-  - value 的范围是多少？
-    - 太小（如负数）：没有意义，数组保持不变
-    - 太大（超过数组里的 max）：数组不变，继续增大也没用
-    - 结论：value 的范围是 [0, max(arr)]
-
-1.2.2 具体过程
-  - 从 value = 0 开始，到 value = max(arr)
-  - 对每个 value：  
-      - 遍历数组，计算新数组的和
-      - 计算这个和与 target 的差值
-      - 记录最小差值， 如果差值相同，取较小的value
-  
-  - 优化点：如果当前value的sum已经大于target了，后面的value只会让差值更大，所以可以提前结束
-  - 时间复杂度：O(maxNum * n)
-  - 空间复杂度：O(1)
-
-
-1.2.3 观察规律
-  - 随着 value 增大，sum 也会越来越大==> 单调性
-    - x < val时，会保持不变
-    - x >= val时，会变成 val
-    - val 是依次递增的
-    - 所以 sum(value) 必然也是依次递增的
-  
-  - sum(val) 单调递增，意味着
-    - 如果 sum < target，继续增大 val 可能更接近 target
-    - 如果 sum > target，继续增大 val 只会更远，所以可以提前结束
-
-
-1.3.1 方法1- 二分查找思路
-  - 在 [0, maxNum] 中找 val
-  - 用二分找到一个位置，使得 sum(val) <= target 且 sum(val+1) > target
-  - 最优解就在 val 和 val+1 之间
-  - 即：找到最大的 val，使得 sum(val) <= target && sum(val+1) > target
-  - 时间复杂度：O(n * log(maxNum))
-  - 空间复杂度：O(1)
-
-
-*/
-
 function findBestValue(arr: number[], target: number): number {
-  const max = Math.max(...arr);
-  let l = -1, r = max + 1;
-  // 双开区间：[-Infinity, l] 无限趋近于 <= target;  [r, Infinity] 无限趋近于 > target
+  // 1 预处理阶段
+  // 1.1 排序arr: 为了 能快速找到 >= val元素的 位置
+  arr.sort((a, b) => a - b);
+  // 1.2 计算前缀和数组: 为了 能快速计算 前idx个元素的和
+  const prefixSum = arr.reduce((acc, cur) => {
+    return [...acc, acc.at(-1) + cur];
+  }, [0]);
+  
+  // err: 根据val，二分查找到val 在arr里 对应的idx
+  // correct: 找到第一个 >= val 的位置
+  // todo 为什么?
+  const getIdx = (val: number) => {
+    let l = -1, r = arr.length;
+    // 满足[-Infinity, l] < val,  [r, Infinity] >= val
+    while (l + 1 < r) {
+      const mid = (l + r) >> 1;
+      if (arr[mid] < val) l = mid + 1;
+      else r = mid - 1;
+    }
+    return r;
+  };
+
+  // 计算某个idx的所有和，其中idx之前的取prefixSum[idx], idx之后的取 val * (len - idx)
+  const getSum = (val: number) => {
+    const idx = getIdx(val);
+    // todo 这里为什么不是 prefixSum[idx + 1] + val * (arr.length - idx) 呢
+    return prefixSum[idx] + val * (arr.length - idx) 
+  };
+
+  // 对可能的val进行二分查找，其范围是(-1, arr.at(-1) + 1)
+  let l = -1, r = (arr.at(-1) || 100000) + 1;
+  let res = 0, diff = Number.MAX_VALUE;
   while (l + 1 < r) {
     const mid = l + ((r - l) >> 1);
-    // 易错点1： 这里mid就是val值，而不是索引
-    const sum = calSum(arr, mid);
-    sum <= target ? (l = mid) : (r = mid);
+    const sum = getSum(mid);
+    if (sum < target) r = mid - 1
+    else l = mid + 1
+    if (Math.abs(sum - target) <= diff) {
+      res = Math.min(res, mid)
+    }
   }
-
-  //易错点2： sum 可能小于 target，所以 需要比较绝对值
-  const disL = Math.abs(calSum(arr, l) - target);
-  const disR = Math.abs(calSum(arr, r) - target);
-  return disL <= disR ? l : r; 
-}
-
-function calSum(arr: number[], val: number) {
-  return arr.reduce((acc, cur) => {
-    return acc + Math.min(cur, val);
-  }, 0);
+  return res
 }
