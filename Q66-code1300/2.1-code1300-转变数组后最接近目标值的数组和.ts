@@ -34,46 +34,21 @@
 export {};
 
 function findBestValue(arr: number[], target: number): number {
-  // 1 预处理阶段
-  // 1.1 排序arr: 为了 能快速找到 >= val元素的 位置
-  arr.sort((a, b) => a - b);
-  // 1.2 计算前缀和数组: 为了 能快速计算 前idx个元素的和
-  const prefixSum = arr.reduce((acc, cur) => {
-    return [...acc, acc.at(-1) + cur];
-  }, [0]);
-  
-  // err: 根据val，二分查找到val 在arr里 对应的idx
-  // correct: 找到第一个 >= val 的位置
-  // todo 为什么?
-  const getIdx = (val: number) => {
-    let l = -1, r = arr.length;
-    // 满足[-Infinity, l] < val,  [r, Infinity] >= val
-    while (l + 1 < r) {
-      const mid = (l + r) >> 1;
-      if (arr[mid] < val) l = mid + 1;
-      else r = mid - 1;
-    }
-    return r;
-  };
-
-  // 计算某个idx的所有和，其中idx之前的取prefixSum[idx], idx之后的取 val * (len - idx)
-  const getSum = (val: number) => {
-    const idx = getIdx(val);
-    // todo 这里为什么不是 prefixSum[idx + 1] + val * (arr.length - idx) 呢
-    return prefixSum[idx] + val * (arr.length - idx) 
-  };
-
-  // 对可能的val进行二分查找，其范围是(-1, arr.at(-1) + 1)
-  let l = -1, r = (arr.at(-1) || 100000) + 1;
-  let res = 0, diff = Number.MAX_VALUE;
+  // 预处理：排序 + 构造前缀和数组
+  arr.sort((a, b) => a - b)
+  const prefixSums= arr.reduce((acc, cur) => {
+    return [...acc, (acc.at(-1) || 0) + cur]
+  }, [0])
+ 
+  // 进行二分查找：获取target的猜测范围 + 获取sum(val) + 找到 sum(val)<= target的 最小val
+  let l = 0, r = 100000 + 1
   while (l + 1 < r) {
-    const mid = l + ((r - l) >> 1);
-    const sum = getSum(mid);
-    if (sum < target) r = mid - 1
-    else l = mid + 1
-    if (Math.abs(sum - target) <= diff) {
-      res = Math.min(res, mid)
-    }
+    const val = (l + r) >> 1
+    if (calSum(val) <= target) l = val
+    else r = val
   }
-  return res
+  const diff1 = Math.abs(target - calSum(l))
+  const diff2 = Math.abs(target - calSum(r))
+  return diff1 <= diff2 ? l : r
+
 }
