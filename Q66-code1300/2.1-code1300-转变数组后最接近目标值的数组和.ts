@@ -40,15 +40,33 @@ function findBestValue(arr: number[], target: number): number {
     return [...acc, (acc.at(-1) || 0) + cur]
   }, [0])
  
-  // 进行二分查找：获取target的猜测范围 + 获取sum(val) + 找到 sum(val)<= target的 最小val
-  let l = 0, r = 100000 + 1
+  // 进行二分查找：获取target的猜测范围 + 获取sum(val) + 找到 sum(val)<= target的 最大val
+  // 双开区间实现 不变量含义：l和r都是已处理过的值
+  // 右边界是数组最大值，因为 val > max(arr) 时 calSum 不再变化
+  let l = 0, r = arr.at(-1) + 1
   while (l + 1 < r) {
     const val = (l + r) >> 1
-    if (calSum(val) <= target) l = val
-    else r = val
+    calSum(val) <= target ? l = val : r = val
   }
+  // 由于要找到和 target最接近的sum，左侧<= taget 和 右侧 > target，不能保证abs那个更短
+  // 所以需要 通过abs比较，确认是 左边还是右边 更接近target
   const diff1 = Math.abs(target - calSum(l))
   const diff2 = Math.abs(target - calSum(r))
   return diff1 <= diff2 ? l : r
 
+  // 辅助函数
+  function calSum(val: number): number {
+    // getIdx: 找到最后一个 <= val 的索引， 即 <= val的 最大值所在idx
+    let l = -1, r = arr.length
+    while (l + 1 < r) {
+      let mid = (l + r) >> 1
+      arr[mid] <= val ? l = mid : r = mid
+    }
+    let idx = l
+    // 易错点
+    // prefixSums[i] 是前 i 个数的和（索引 0 到 i-1）
+    // 索引 0 到 idx 的数都 <= val，它们的和是 prefixSums[idx + 1]
+    // 索引 idx+1 到 arr.length-1 的数都 > val，都要变成 val
+    return prefixSums[idx + 1] + (arr.length - idx - 1) * val
+  }
 }
